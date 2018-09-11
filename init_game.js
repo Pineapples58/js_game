@@ -1,8 +1,8 @@
-var canvas = document.getElementById('myCanvas');
-var c = canvas.getContext('2d');
-let player = new Player();
-let background = new Background();
-let SQR = 10;
+var canvas;
+var c;
+let player;
+let background;
+let SQR;
 
 function draw_game() {
     background.draw();
@@ -15,10 +15,15 @@ function canvas_size () {
     canvas.height = window.innerHeight;
 }
 
-window.onload = canvas_size;
 window.resize = canvas_size;
 
 function init() {
+    canvas = document.getElementById('myCanvas');
+    c = canvas.getContext('2d');   
+    player = new Player();
+    background = new Background();
+    SQR = 10;
+    
     document.onkeydown = function(e) {
         if (e.key == 'ArrowLeft') {
             e.preventDefault();
@@ -37,6 +42,7 @@ function init() {
             player.moveDown();   
         }
     };
+    canvas_size();
     draw_game();
 }
-init();
+window.onload = init;
