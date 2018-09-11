@@ -10,4 +10,8 @@ html, body, #gameArea {
   top: 0px;
 } 
 
+body {
+  overflow:hidden;
+}
+
 
