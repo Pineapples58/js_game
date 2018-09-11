@@ -105,22 +105,18 @@ function canvas_size () {
     canvas.height = window.innerHeight;
 }
 
-//window.onload = canvas_size;
+window.onload = canvas_size;
 window.resize = canvas_size;
-
-window.onLoad = function () {
-canvas = document.getElementById('myCanvas');
-c = canvas.getContext('2d');
-canvas_size();     
-    
-player = new Player();
-background = new Background();
-SQR = 10;
-   
-}
 
 
 function init() {
+    
+    canvas = document.getElementById('myCanvas');
+    c = canvas.getContext('2d');   
+    player = new Player();
+    background = new Background();
+    SQR = 10;
+    
     document.onkeydown = function(e) {
         if (e.key == 'ArrowLeft') {
             e.preventDefault();
