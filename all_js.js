@@ -105,7 +105,7 @@ function canvas_size () {
     canvas.height = window.innerHeight;
 }
 
-window.onload = canvas_size;
+window.onload = init;
 window.resize = canvas_size;
 
 
@@ -135,6 +135,7 @@ function init() {
             player.moveDown();   
         }
     };
+    canvas_size();
     draw_game();
 }
-init();
+//init();
