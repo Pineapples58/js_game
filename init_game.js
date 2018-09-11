@@ -11,6 +11,7 @@ function draw_game() {
 }
 
 function canvas_size () {
+    console.log(window.innerWidth);
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
 }
