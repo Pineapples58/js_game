@@ -1,8 +1,10 @@
-var canvas = document.getElementById('myCanvas');
-var c = canvas.getContext('2d');
-let player = new Player();
-let background = new Background();
-let SQR = 10;
+
+var canvas;
+var c;
+let player;
+let background;
+let SQR;
+
 
 function Player () {
     this.location = "start";
@@ -103,8 +105,20 @@ function canvas_size () {
     canvas.height = window.innerHeight;
 }
 
-window.onload = canvas_size;
+//window.onload = canvas_size;
 window.resize = canvas_size;
+
+window.onLoad = function () {
+canvas = document.getElementById('myCanvas');
+c = canvas.getContext('2d');
+canvas_size();     
+    
+player = new Player();
+background = new Background();
+SQR = 10;
+   
+}
+
 
 function init() {
     document.onkeydown = function(e) {
