@@ -5,7 +5,6 @@ let player;
 let background;
 let SQR;
 
-
 function Player () {
     this.location = "start";
     this.x = window.innerWidth/2;
