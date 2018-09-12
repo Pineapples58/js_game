@@ -56,8 +56,8 @@ Player.prototype.moveRight = function() {
 };
 
 Player.prototype.detectContact = function (dx,dy) {
-    let room_x = Math.floor((this.x - room.x)/SQR)+dx;
-    let room_y = Math.floor((this.y - room.y)/SQR)+dy;
+    let room_x = Math.round((this.x - room.x)/SQR)+dx;
+    let room_y = Math.round((this.y - room.y)/SQR)+dy;
     
     let space = room.getSqr(room_x,room_y);
     console.log(room_x, room_y, space);
