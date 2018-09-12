@@ -3,9 +3,11 @@ var c;
 let player;
 let background;
 let SQR;
+let room;
 
 function draw_game() {
     background.draw();
+    room.draw();
     player.draw();
     requestAnimationFrame(draw_game);
 }
@@ -22,6 +24,7 @@ function init() {
     c = canvas.getContext('2d');   
     player = new Player();
     background = new Background();
+    room = new Room(room_data.start.layout, 50, 50, room_data.start.color_pallet);
     SQR = 10;
     
     document.onkeydown = function(e) {
