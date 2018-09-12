@@ -32,10 +32,12 @@ Room.prototype.draw = function() {
 
 var room_data = {
   start : {
-    layout : [['wall','wall','wall','wall','wall','wall'],
-              ['wall','floor','floor','floor','floor','wall'],
-              ['wall','floor','floor','floor','floor','wall'],
-              ['wall','wall','wall','wall','wall','wall']],
+    layout : [['wall','wall','wall','wall','wall','wall','wall','wall'],
+              ['wall','floor','floor','floor','floor','floor','floor','wall'],
+              ['wall','floor','floor','floor','floor','floor','floor','wall'],
+              ['wall','floor','floor','floor','floor','floor','floor','wall'],
+              ['wall','floor','floor','floor','floor','floor','floor','wall'],
+              ['wall','wall','wall','wall','wall','wall','wall','wall']],
     color_pallet : { 'wall':'black', 'floor':'green'}
   },
 };
