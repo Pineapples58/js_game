@@ -21,6 +21,7 @@ Player.prototype.undraw = function() {
     
 Player.prototype.moveUp = function() {
     let contact = this.detectContact(0,-1);
+    console.log(contact);
     if (contact[0] == 'wall') {
         this.undraw();
         this.y -= SQR;
