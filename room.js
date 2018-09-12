@@ -10,6 +10,14 @@ Room.prototype.getSqr = function(x,y) {
     return this.layout[y][x];
 };
 
+Room.prototype.getX = function() {
+    return this.x;   
+}
+
+Room.prototype.getY = function() {
+    return this.y;   
+}
+
 Room.prototype.draw = function() {
     let color;
     for (var i=0; i<this.layout.length; i++) {
