@@ -20,12 +20,12 @@ function canvas_size () {
 window.resize = canvas_size;
 
 function init() {
+    SQR = 10;
     canvas = document.getElementById('myCanvas');
     c = canvas.getContext('2d');   
     player = new Player();
     background = new Background();
-    room = new Room(room_data.start.layout, 50, 50, room_data.start.color_pallet);
-    SQR = 10;
+    room = new Room(room_data.start.layout, (player.x-(room_data.start.layout[0].length/2*SQR)), (player.y-(room_data.start.layout.length/2*SQR)), room_data.start.color_pallet);
     
     document.onkeydown = function(e) {
         if (e.key == 'ArrowLeft') {
