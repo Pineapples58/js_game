@@ -11,13 +11,13 @@ Room.prototype.draw = function() {
     for (var i=0; i<this.layout.length; i++) {
         for (var j=0; j<this.layout[i].length; j++) {
             switch (this.layout[i][j]) {
-                case 'wall':
+                case 'w':
                     color = this.color_pallet.wall;
                     break;
-                case 'floor':
+                case 'f':
                     color = this.color_pallet.floor;
                     break;
-                case 'door':
+                case 'd':
                     color = this.color_pallet.door; 
                     break;
                 default:
@@ -32,12 +32,25 @@ Room.prototype.draw = function() {
 
 var room_data = {
   start : {
-    layout : [['wall','wall','wall','wall','wall','wall','wall','wall'],
-              ['wall','floor','floor','floor','floor','floor','floor','wall'],
-              ['wall','floor','floor','floor','floor','floor','floor','wall'],
-              ['wall','floor','floor','floor','floor','floor','floor','wall'],
-              ['wall','floor','floor','floor','floor','floor','floor','wall'],
-              ['wall','wall','wall','wall','wall','wall','wall','wall']],
+    layout : [['w','w','w','w','w','w','w','w'],
+              ['w','f','f','f','f','f','f','w'],
+              ['w','f','f','f','f','f','f','w'],
+              ['w','f','f','f','f','f','f','w'],
+              ['w','f','f','f','f','f','f','w'],
+              ['w','f','f','f','f','f','f','w'],
+              ['w','f','f','f','f','f','f','w'],
+              ['w','f','f','f','f','f','f','w'],
+              ['w','w','w','w','w','w','w','w']],
     color_pallet : { 'wall':'black', 'floor':'green'}
   },
 };
+/** color pallet codes
+w = wall
+f = floor
+d = door
+c = chest
+
+
+*/
+
+
