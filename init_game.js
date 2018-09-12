@@ -25,7 +25,7 @@ function init() {
     c = canvas.getContext('2d');   
     player = new Player();
     background = new Background();
-    room = new Room(room_data.start.layout, (player.x-(room_data.start.layout[0].length/2*SQR)), (player.y-(room_data.start.layout.length/2*SQR)), room_data.start.color_pallet);
+    room = new Room(room_data.start.layout, room_data.start.color_pallet);
     
     document.onkeydown = function(e) {
         if (e.key == 'ArrowLeft') {
