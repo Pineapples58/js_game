@@ -6,6 +6,10 @@ function Room(layout,x,y,color_pallet) {
     this.color_pallet = color_pallet;
 }
 
+Room.prototype.getSqr = function(x,y) {
+    return this.layout[y][x];
+};
+
 Room.prototype.draw = function() {
     let color;
     for (var i=0; i<this.layout.length; i++) {
