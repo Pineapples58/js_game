@@ -25,7 +25,7 @@ function init() {
     c = canvas.getContext('2d');   
 
     background = new Background();
-    room = new Room(room_data.start.layout, room_data.start.color_pallet);
+    room = new Room(room_data.start);
     player = new Player();
     
     document.onkeydown = function(e) {
