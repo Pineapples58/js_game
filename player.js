@@ -20,8 +20,8 @@ Player.prototype.undraw = function() {
 };
     
 Player.prototype.moveUp = function() {
-    let contact_type = this.detectContact(0,-1);
-    if (!contact_type) {
+    let contact = this.detectContact(0,-1);
+    if (!contact) {
         this.undraw();
         this.y -= SQR;
         this.draw();
@@ -29,8 +29,9 @@ Player.prototype.moveUp = function() {
 };
 
 Player.prototype.moveDown = function() {
-    let contact_type = this.detectContact(0,2);
-    if (!contact_type) {
+    // Need to check to srqs below since player is 2 sqrs tall
+    let contact = this.detectContact(0,2);
+    if (!contact) {
         this.undraw();
         this.y += SQR;
         this.draw();
@@ -38,8 +39,10 @@ Player.prototype.moveDown = function() {
  };
 
 Player.prototype.moveLeft = function() {
-    let contact_type = this.detectContact(-1,0);
-    if (!contact_type) {
+    //need to check sqrs form top and bottom sqrs of player
+    let top_contact = this.detectContact(-1,0);
+    let bot_contact = this.detectContact(-1,1);
+    if (!top_contact && !bot_contact) {
         this.undraw();
         this.x -= SQR;
         this.draw();
@@ -47,8 +50,10 @@ Player.prototype.moveLeft = function() {
 };
 
 Player.prototype.moveRight = function() {
-    let contact_type = this.detectContact(1,0);
-    if (!contact_type) {
+    //need to check sqrs form top and bottom sqrs of player
+    let top_contact = this.detectContact(1,0);
+    let bot_contact = this.detectContact(1,1);
+    if (!top_contact && !bot_contact) {
         this.undraw();
         this.x += SQR;
         this.draw();
@@ -58,9 +63,8 @@ Player.prototype.moveRight = function() {
 Player.prototype.detectContact = function (dx,dy) {
     let room_x = Math.round((this.x - room.x)/SQR)+dx;
     let room_y = Math.round((this.y - room.y)/SQR)+dy;
-    
     let space = room.getSqr(room_x,room_y);
-    console.log(room_x, room_y, space);
+    
     if (space == 'w') {return true;}
     else {return false;}
 };
