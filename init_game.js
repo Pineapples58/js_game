@@ -23,9 +23,10 @@ function init() {
     SQR = 5;
     canvas = document.getElementById('myCanvas');
     c = canvas.getContext('2d');   
-    player = new Player();
+
     background = new Background();
     room = new Room(room_data.start.layout, room_data.start.color_pallet);
+    player = new Player();
     
     document.onkeydown = function(e) {
         if (e.key == 'ArrowLeft') {
