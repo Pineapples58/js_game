@@ -2,8 +2,8 @@ function Player () {
     this.location = "start";
     this.x = room.x+SQR;
     this.y = room.y+SQR;
-    this.height = 9;
-    this.width = 6;
+    this.height = 10;
+    this.width = 5;
     this.color = 'green';
     this.equiped = [];
     this.inventory = [];
