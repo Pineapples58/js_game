@@ -1,5 +1,6 @@
 
-function Room(layout,color_pallet) {
+function Room(data) {
+    this.name = data.name;
     this.layout = layout;
     this.x = (window.innerWidth-this.layout[0].length)/2;
     this.y = (window.innerHeight-this.layout.length)/2;
@@ -38,12 +39,14 @@ Room.prototype.draw = function() {
             }
             c.fillStyle = color;
             c.fillRect(this.x+(j*SQR),this.y+(i*SQR),SQR,SQR);
+            c.strokeRect(this.x+(j*SQR),this.y+(i*SQR),SQR,SQR);
         }
     }
 };
 
 var room_data = {
   start : {
+    name : 'Start_Area',
     layout : [['w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w'],
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
