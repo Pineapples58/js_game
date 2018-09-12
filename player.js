@@ -20,7 +20,7 @@ Player.prototype.undraw = function() {
 };
     
 Player.prototype.moveUp = function() {
-    //let contact_type = this.detectContact(0,1);
+    let contact_type = this.detectContact(0,1);
     //if (!contact_type) {
         this.undraw();
         this.y -= SQR;
@@ -48,3 +48,13 @@ Player.prototype.moveRight = function() {
     this.x += SQR;
     this.draw();
 };
+
+Player.prototype.detectContact = function (dx,dy) {
+    let room_x = Math.floor((this.x - room.x)/SQR)+dx;
+    let room_y = Math.floor((this.y - room.y)/SQR)+dy;
+    console.log(room_x, room_y);
+    let space = room.getSqr(room_x,room_y);
+    if (space == 'w') {return true;}
+    else {return false;}
+};
+
