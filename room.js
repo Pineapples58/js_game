@@ -25,13 +25,13 @@ Room.prototype.draw = function() {
         for (var j=0; j<this.layout[i].length; j++) {
             switch (this.layout[i][j]) {
                 case 'w':
-                    color = this.color_pallet.wall;
+                    color = this.color_pallet.w;
                     break;
                 case 'f':
-                    color = this.color_pallet.floor;
+                    color = this.color_pallet.f;
                     break;
                 case 'd':
-                    color = this.color_pallet.door; 
+                    color = this.color_pallet.d; 
                     break;
                 default:
                     color = 'white';
@@ -67,7 +67,9 @@ var room_data = {
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
               ['w','w','w','w','w','w','w','w','w','d','d','w','w','w','w','w','w','w','w','w']],
-    color_pallet : { 'wall':'black', 'floor':'green', 'door':'brown'}
+    color_pallet : { 'w':'black', 'f':'green', 'd':'brown'}
+      //Maybe add a layout conversion here to change the char to an object 
+      //Instead of saving giant arrays of object just to save space.
   },
   first : {
     name : 'First_Area',
@@ -90,7 +92,7 @@ var room_data = {
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
               ['w','w','w','w','w','w','w','w','w','d','d','w','w','w','w','w','w','w','w','w']],
-    color_pallet : { 'wall':'black', 'floor':'green', 'door':'brown'}
+    color_pallet : { 'w':'black', 'f':'green', 'd':'brown'}
   },
 };
 /** color pallet codes
