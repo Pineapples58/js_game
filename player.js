@@ -29,7 +29,7 @@ Player.prototype.moveUp = function() {
 };
 
 Player.prototype.moveDown = function() {
-    let contact_type = this.detectContact(0,1);
+    let contact_type = this.detectContact(0,2);
     if (!contact_type) {
         this.undraw();
         this.y += SQR;
