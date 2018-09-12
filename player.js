@@ -1,7 +1,7 @@
 function Player () {
     this.location = "start";
-    this.x = window.innerWidth/2;
-    this.y = window.innerHeight/2;
+    this.x = room.x+SQR;
+    this.y = room.y+SQR;
     this.height = 9;
     this.width = 6;
     this.color = 'green';
