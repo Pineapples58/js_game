@@ -1,5 +1,5 @@
 
-function Room(layout,x,y,color_pallet) {
+function Room(layout,color_pallet) {
     this.layout = layout;
     this.x = (window.innerWidth-this.layout[0].length)/2;
     this.y = (window.innerHeight-this.layout.length)/2;
