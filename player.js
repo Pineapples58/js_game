@@ -29,7 +29,7 @@ Player.prototype.moveUp = function() {
 };
 
 Player.prototype.moveDown = function() {
-    let contact_type = this.detectContact(0,1);
+    let contact_type = this.detectContact(0,-1);
     if (!contact_type) {
         this.undraw();
         this.y += SQR;
@@ -38,7 +38,7 @@ Player.prototype.moveDown = function() {
  };
 
 Player.prototype.moveLeft = function() {
-    let contact_type = this.detectContact(0,1);
+    let contact_type = this.detectContact(-1,0);
     if (!contact_type) {
         this.undraw();
         this.x -= SQR;
@@ -47,7 +47,7 @@ Player.prototype.moveLeft = function() {
 };
 
 Player.prototype.moveRight = function() {
-    let contact_type = this.detectContact(0,1);
+    let contact_type = this.detectContact(1,0);
     if (!contact_type) {
         this.undraw();
         this.x += SQR;
