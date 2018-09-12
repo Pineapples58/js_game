@@ -38,6 +38,7 @@ Room.prototype.draw = function() {
                     console.log(this.layout[i][j]);
             }
             c.fillStyle = color;
+            c.strokeStyle = color;
             c.fillRect(this.x+(j*SQR),this.y+(i*SQR),SQR,SQR);
             c.strokeRect(this.x+(j*SQR),this.y+(i*SQR),SQR,SQR);
         }
