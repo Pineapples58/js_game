@@ -63,7 +63,7 @@ var room_data = {
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
               ['w','w','w','w','w','w','w','w','w','d','d','w','w','w','w','w','w','w','w','w']],
-    color_pallet : { 'wall':'black', 'floor':'green'}
+    color_pallet : { 'wall':'black', 'floor':'green', 'door':'brown'}
   },
 };
 /** color pallet codes
