@@ -22,26 +22,26 @@ Player.prototype.undraw = function() {
 Player.prototype.moveUp = function() {
     let contact = this.detectContact(0,-1);
     console.log(contact);
-    if (contact[0] == 'w') {
+    if (contact[0] == 'd') {
+         player.throughDoor();
+    }
+    else if (contact[0] != 'w') {
         this.undraw();
         this.y -= SQR;
         this.draw();
-     }
-     else if (contact[0] == 'd') {
-         player.throughDoor();
      }
 };
 
 Player.prototype.moveDown = function() {
     // Need to check to srqs below since player is 2 sqrs tall
     let contact = this.detectContact(0,2);
-    if (contact[0] == 'w') {
+    if (contact[0] == 'd') {
+         player.throughDoor();
+    }
+    else if (contact[0] != 'w') {
         this.undraw();
         this.y += SQR;
         this.draw();
-    }
-    else if (contact[0] == 'd') {
-         player.throughDoor();
     }
 };
 
@@ -49,16 +49,16 @@ Player.prototype.moveLeft = function() {
     //need to check sqrs form top and bottom sqrs of player
     let top_contact = this.detectContact(-1,0);
     let bot_contact = this.detectContact(-1,1);
-    if (top_contact[0] == 'w' && bot_contact[0] == 'w') {
-        this.undraw();
-        this.x -= SQR;
-        this.draw();
-    }
-    else if (top_contact[0] == 'd') {
+    if (top_contact[0] == 'd') {
         player.throughDoor(top_contact[1], top_contact[2]);
     }
     else if (bot_contact[0] == 'd') {
         player.throughDoor(bot_contact[1], bot_contact[2]);
+    }
+    else if (top_contact[0] != 'w' && bot_contact[0] != 'w') {
+        this.undraw();
+        this.x -= SQR;
+        this.draw();
     }
 };
 
@@ -66,16 +66,16 @@ Player.prototype.moveRight = function() {
     //need to check sqrs form top and bottom sqrs of player
     let top_contact = this.detectContact(1,0);
     let bot_contact = this.detectContact(1,1);
-    if (top_contact[0] == 'w' && bot_contact[0] == 'w') {
-        this.undraw();
-        this.x += SQR;
-        this.draw();
-    }
-    else if (top_contact[0] == 'd') {
+    if (top_contact[0] == 'd') {
         player.throughDoor(top_contact[1], top_contact[2]);
     }
     else if (bot_contact[0] == 'd') {
         player.throughDoor(bot_contact[1], bot_contact[2]);
+    }
+    else if (top_contact[0] != 'w' && bot_contact[0] != 'w') {
+        this.undraw();
+        this.x += SQR;
+        this.draw();
     }
 };
 
