@@ -29,21 +29,30 @@ Player.prototype.moveUp = function() {
 };
 
 Player.prototype.moveDown = function() {
-    this.undraw();
-    this.y += SQR;
-    this.draw();
+    let contact_type = this.detectContact(0,1);
+    if (!contact_type) {
+        this.undraw();
+        this.y += SQR;
+        this.draw();
+    }
  };
 
 Player.prototype.moveLeft = function() {
-    this.undraw();
-    this.x -= SQR;
-    this.draw();
+    let contact_type = this.detectContact(0,1);
+    if (!contact_type) {
+        this.undraw();
+        this.x -= SQR;
+        this.draw();
+    }
 };
 
 Player.prototype.moveRight = function() {
-    this.undraw();
-    this.x += SQR;
-    this.draw();
+    let contact_type = this.detectContact(0,1);
+    if (!contact_type) {
+        this.undraw();
+        this.x += SQR;
+        this.draw();
+    }
 };
 
 Player.prototype.detectContact = function (dx,dy) {
