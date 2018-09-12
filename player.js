@@ -23,7 +23,7 @@ Player.prototype.moveUp = function() {
     let contact = this.detectContact(0,-1);
     console.log(contact);
     if (contact[0] == 'd') {
-         player.throughDoor();
+         player.throughDoor(contact[1],contact[2]);
     }
     else if (contact[0] != 'w') {
         this.undraw();
@@ -36,7 +36,7 @@ Player.prototype.moveDown = function() {
     // Need to check to srqs below since player is 2 sqrs tall
     let contact = this.detectContact(0,2);
     if (contact[0] == 'd') {
-         player.throughDoor();
+         player.throughDoor(contact[1],contact[2]);
     }
     else if (contact[0] != 'w') {
         this.undraw();
