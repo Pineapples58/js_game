@@ -21,7 +21,6 @@ Player.prototype.undraw = function() {
     
 Player.prototype.moveUp = function() {
     let contact = this.detectContact(0,-1);
-    console.log(contact);
     if (contact[0] == 'd') {
          player.throughDoor(contact[1],contact[2]);
     }
@@ -89,7 +88,13 @@ Player.prototype.detectContact = function (dx,dy) {
     else {return false;}
 };
 
+Player.prototype.positionReset = function () {
+      this.x = room.getX()+SQR;
+      this.y = room.getY()+SQR;
+};
+
 Player.prototype.throughDoor = function (x,y) {
-     console.log(x,y);   
+     room = new Room(room_data.first);
+     player.positionReset();
 }
 
