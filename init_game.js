@@ -20,7 +20,7 @@ function canvas_size () {
 window.resize = canvas_size;
 
 function init() {
-    SQR = 10;
+    SQR = 5;
     canvas = document.getElementById('myCanvas');
     c = canvas.getContext('2d');   
     player = new Player();
