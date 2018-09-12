@@ -21,14 +21,11 @@ Player.prototype.undraw = function() {
     
 Player.prototype.moveUp = function() {
     let contact_type = this.detectContact(0,1);
-    //if (!contact_type) {
+    if (!contact_type) {
         this.undraw();
         this.y -= SQR;
         this.draw();
-   // }
-   // else if (contact_type = 'hit') {
-   //     this.hit();
-   // }
+     }
 };
 
 Player.prototype.moveDown = function() {
