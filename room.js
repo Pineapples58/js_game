@@ -1,9 +1,7 @@
 
 function Room(data) {
     this.name = data.name;
-    
-    
-    this.layout = data.layout;
+    this.layout = data.layout.map(arr => {return arr.map(elem => {return data.layout_conversion_key[elem]})});
     this.x = (window.innerWidth-this.layout[0].length)/2;
     this.y = (window.innerHeight-this.layout.length)/2;
     this.color_pallet = data.color_pallet;
