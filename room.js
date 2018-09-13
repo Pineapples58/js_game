@@ -118,8 +118,9 @@ var room_data = {
                              name : 'door',
                              color : 'brown',
                              next_room : 'Start_Area',
-                         }};
-  },
+                         }
+     }
+  }
 };
 
 
