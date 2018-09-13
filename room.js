@@ -1,6 +1,8 @@
 
 function Room(data) {
     this.name = data.name;
+    
+    
     this.layout = data.layout;
     this.x = (window.innerWidth-this.layout[0].length)/2;
     this.y = (window.innerHeight-this.layout.length)/2;
@@ -67,13 +69,25 @@ var room_data = {
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
               ['w','w','w','w','w','w','w','w','w','d','d','w','w','w','w','w','w','w','w','w']],
-    color_pallet : { 'w':'black', 'f':'green', 'd':'brown'}
-      //Maybe add a layout conversion here to change the char to an object 
-      //Instead of saving giant arrays of object just to save space.
+    layout_conversion_key : {'w':{
+                             name : 'wall',
+                             color : 'black',
+                             walkable : false,
+                         },
+                         'f':{
+                             name : 'floor',
+                             color : 'green',
+                             walkable : true,
+                         },
+                         'd':{
+                             name : 'door',
+                             color : 'brown',
+                             next_room : 'First_Area',
+                         }};
   },
   first : {
     name : 'First_Area',
-    layout : [['w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w'],
+    layout : [['w','w','w','w','w','w','w','w','d','d','w','w','w','w','w','w','w','w','w','w'],
               ['w','f','f','f','f','w','f','f','f','f','f','w','f','f','f','f','f','f','f','w'],
               ['w','f','f','f','f','w','f','f','f','f','f','w','f','f','f','f','f','f','f','w'],
               ['w','f','f','f','f','w','f','f','f','f','f','w','f','f','f','f','f','f','f','w'],
@@ -91,17 +105,24 @@ var room_data = {
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','w','w','w','w','w','w','w','w','d','d','w','w','w','w','w','w','w','w','w']],
-    color_pallet : { 'w':'black', 'f':'green', 'd':'brown'}
+              ['w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w']],
+     layout_conversion_key : {'w':{
+                             name : 'wall',
+                             color : 'black',
+                             walkable : false,
+                         },
+                         'f':{
+                             name : 'floor',
+                             color : 'green',
+                             walkable : true,
+                         },
+                         'd':{
+                             name : 'door',
+                             color : 'brown',
+                             next_room : 'Start_Area',
+                         }};
   },
 };
-/** color pallet codes
-w = wall
-f = floor
-d = door
-c = chest
 
-
-*/
 
 
