@@ -23,11 +23,11 @@ Room.prototype.draw = function() {
     let color;
     for (var i=0; i<this.layout.length; i++) {
         for (var j=0; j<this.layout[i].length; j++) {
-            switch (this.layout[i][j]) {
-                case 'w':
+            /*switch (this.layout[i][j].name) {
+                case 'wall':
                     color = this.color_pallet.w;
                     break;
-                case 'f':
+                case 'floor':
                     color = this.color_pallet.f;
                     break;
                 case 'd':
@@ -36,9 +36,9 @@ Room.prototype.draw = function() {
                 default:
                     color = 'white';
                     console.log(this.layout[i][j]);
-            }
-            c.fillStyle = color;
-            c.strokeStyle = color;
+            }*/
+            c.fillStyle = this.layout[i][j].color;
+            c.strokeStyle = this.layout[i][j].color;
             c.fillRect(this.x+(j*SQR),this.y+(i*SQR),SQR,SQR);
             c.strokeRect(this.x+(j*SQR),this.y+(i*SQR),SQR,SQR);
         }
