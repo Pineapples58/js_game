@@ -71,17 +71,18 @@ var room_data = {
                              name : 'wall',
                              color : 'black',
                              walkable : false,
-                         },
-                         'f':{
-                             name : 'floor',
-                             color : 'green',
-                             walkable : true,
-                         },
-                         'd':{
-                             name : 'door',
-                             color : 'brown',
-                             next_room : 'First_Area',
-                         }};
+                             },
+                             'f':{
+                                 name : 'floor',
+                                 color : 'green',
+                                 walkable : true,
+                             },
+                             'd':{
+                                 name : 'door',
+                                 color : 'brown',
+                                 next_room : 'First_Area',
+                             }
+                          }
   },
   first : {
     name : 'First_Area',
