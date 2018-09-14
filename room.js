@@ -19,6 +19,10 @@ function Room(data) {
 
 Room.prototype.constructor = Room;
 
+Room.prototype.addToLayout = function(obj) {
+    this.layout.push(obj);
+};
+
 Room.prototype.getSqr = function(x,y) {
     return this.layout[y][x];
 };
@@ -49,8 +53,8 @@ var room_data = {
 };
 
 function Floor(data) {
-    this.x = data.x;
-    this.y = data.y;
+    this.x = room.x+data.x;
+    this.y = room.y+data.y;
     this.x_len = data.x_len;
     this.y_len = data.y_len;
     this.fill_color = data.fill_color;
