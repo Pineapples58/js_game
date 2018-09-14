@@ -23,20 +23,6 @@ Room.prototype.draw = function() {
     let color;
     for (var i=0; i<this.layout.length; i++) {
         for (var j=0; j<this.layout[i].length; j++) {
-            /*switch (this.layout[i][j].name) {
-                case 'wall':
-                    color = this.color_pallet.w;
-                    break;
-                case 'floor':
-                    color = this.color_pallet.f;
-                    break;
-                case 'd':
-                    color = this.color_pallet.d; 
-                    break;
-                default:
-                    color = 'white';
-                    console.log(this.layout[i][j]);
-            }*/
             c.fillStyle = this.layout[i][j].color;
             c.strokeStyle = this.layout[i][j].color;
             c.fillRect(this.x+(j*SQR),this.y+(i*SQR),SQR,SQR);
@@ -48,6 +34,7 @@ Room.prototype.draw = function() {
 var room_data = {
   start : {
     name : 'Start_Area',
+    play_start: [3,3],
     layout : [['w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w'],
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
@@ -87,6 +74,7 @@ var room_data = {
   },
   first : {
     name : 'First_Area',
+    player_start: [8,1],
     layout : [['w','w','w','w','w','w','w','w','d','d','w','w','w','w','w','w','w','w','w','w'],
               ['w','f','f','f','f','w','f','f','f','f','f','w','f','f','f','f','f','f','f','w'],
               ['w','f','f','f','f','w','f','f','f','f','f','w','f','f','f','f','f','f','f','w'],
