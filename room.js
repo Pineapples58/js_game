@@ -57,8 +57,8 @@ var room_data = {
 };
 
 function Floor(data) {
-    this.x = room.x+data.x;
-    this.y = room.y+data.y;
+    this.x = room.getX()+data.x;
+    this.y = room.getY()+data.y;
     this.x_len = data.x_len;
     this.y_len = data.y_len;
     this.fill_color = data.fill_color;
