@@ -1,9 +1,5 @@
-var canvas;
-var c;
-let player;
-let background;
-let SQR;
-let room;
+// Global vars set in init()
+let canvas, c, player, background, room, SQR; 
 
 function draw_game() {
     background.draw();
@@ -20,30 +16,22 @@ function canvas_size () {
 window.resize = canvas_size;
 
 function init() {
+    // Set constants
     SQR = 5;
+    
+    // Set up canvas
     canvas = document.getElementById('myCanvas');
     c = canvas.getContext('2d');   
 
+    // Sets the objects 
     background = new Background();
     room = new Room(room_data.start);
     player = new Player();
     
     document.onkeydown = function(e) {
-        if (e.key == 'ArrowLeft') {
+        if (e.key == 'ArrowLeft' || e.key == 'ArrowUp' || e.key == 'ArrowRight' || e.key == 'ArrowDown') {
             e.preventDefault();
-            player.moveLeft();
-        }
-        else if (e.key == 'ArrowUp') {
-            e.preventDefault();
-            player.moveUp();
-        }
-        else if (e.key == 'ArrowRight') {
-            e.preventDefault();
-            player.moveRight();   
-        }
-        else if (e.key == 'ArrowDown') {
-            e.preventDefault();
-            player.moveDown();   
+            player.move(e.key);
         }
     };
     canvas_size();
