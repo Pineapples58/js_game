@@ -1,12 +1,11 @@
 
 function Room(data) {
-    console.log(data);
+    console.log(data.layout_ordering);
     this.name = data.name;
     this.x = (window.innerWidth-100)/2;
     this.y = (window.innerHeight-100)/2;
     this.layout = []
-    this.layout_ordering = data.layout_ordering;
-    
+         
     data.layout_ordering.foreach((order_name) => {
         data.layout[order_name].foreach((obj_data) => {
             switch (order_name) {
