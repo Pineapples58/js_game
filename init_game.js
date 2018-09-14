@@ -4,7 +4,7 @@ let canvas, c, player, background, room, SQR;
 function draw_game() {
     background.draw();
     room.draw();
-    player.draw();
+    //player.draw();
     requestAnimationFrame(draw_game);
 }
 
@@ -26,7 +26,7 @@ function init() {
     // Sets the objects 
     background = new Background();
     room = new Room(room_data.Start_Area);
-    player = new Player();
+    //player = new Player();
     
     document.onkeydown = function(e) {
         if (e.key == 'ArrowLeft' || e.key == 'ArrowUp' || e.key == 'ArrowRight' || e.key == 'ArrowDown') {
