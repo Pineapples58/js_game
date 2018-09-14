@@ -1,6 +1,9 @@
 # js_game
 my attempt at a js game
-need to
-update player.js to fit the new updates to room.js
-- change and combine the move functions
-- update the thourghDoor function to properly update room
+- ok now i think the matrix is not the way to do this. it will take up alot of space 
+- and it will decrease flexibility
+- I should give the layout piece by piece
+- so floor (0,0,100,100) (top_x, top_y, len_x, len_y)
+- walls [[0,0,100,5],[0,0,5,100].....]
+do it off a scale of 100 so it can easily be adjusted for different screen sizes
+will need to adapt most functions to 
