@@ -7,3 +7,5 @@ my attempt at a js game
 - walls [[0,0,100,5],[0,0,5,100].....]
 do it off a scale of 100 so it can easily be adjusted for different screen sizes
 will need to adapt most functions to 
+
+So i need to make floor wall door ect... object that will make up the room
