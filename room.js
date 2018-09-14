@@ -80,6 +80,7 @@ var room_data = {
                              'd':{
                                  name : 'door',
                                  color : 'brown',
+                                 walkable : false,
                                  next_room : 'First_Area',
                              }
                           }
@@ -109,17 +110,18 @@ var room_data = {
                              name : 'wall',
                              color : 'black',
                              walkable : false,
-                         },
-                         'f':{
-                             name : 'floor',
-                             color : 'green',
-                             walkable : true,
-                         },
-                         'd':{
-                             name : 'door',
-                             color : 'brown',
-                             next_room : 'Start_Area',
-                         }
+                             },
+                             'f':{
+                                 name : 'floor',
+                                 color : 'green',
+                                 walkable : true,
+                             },
+                             'd':{
+                                 name : 'door',
+                                 color : 'brown',
+                                 walkable : false,
+                                 next_room : 'Start_Area',
+                             }
      }
   }
 };
