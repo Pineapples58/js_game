@@ -61,8 +61,8 @@ function Floor(data) {
 Floor.prototype.draw = function () {
     c.fillStyle = this.fill_color;
     c.strokeStyle = this.stroke_color;
-    c.fillRect(this.x, this.y, x_len, y_len);
-    c.strokeRect(this.x, this.y, x_len, y_len);
+    c.fillRect(this.x, this.y, this.x_len, this.y_len);
+    c.strokeRect(this.x, this.y, this.x_len, this.y_len);
 }
 
 Floor.prototype.constructor = Floor;
