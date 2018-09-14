@@ -34,7 +34,7 @@ Player.prototype.move = function(dir) {
             detect_x = 1;
             break;
         case 'ArrowLeft':
-            detect_y = -1;
+            detect_x = -1;
             break;
     }
     let spaces = this.detectContact(detect_x, detect_y);
