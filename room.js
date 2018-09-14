@@ -68,9 +68,9 @@ var room_data = {
               ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
               ['w','w','w','w','w','w','w','w','w','d','d','w','w','w','w','w','w','w','w','w']],
     layout_conversion_key : {'w':{
-                             name : 'wall',
-                             color : 'black',
-                             walkable : false,
+                                 name : 'wall',
+                                 color : 'black',
+                                 walkable : false,
                              },
                              'f':{
                                  name : 'floor',
