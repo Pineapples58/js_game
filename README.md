@@ -9,3 +9,7 @@ do it off a scale of 100 so it can easily be adjusted for different screen sizes
 will need to adapt most functions to 
 
 So i need to make floor wall door ect... object that will make up the room
+finish making the new rooms
+
+then update player contact 
+
