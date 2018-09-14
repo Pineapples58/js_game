@@ -6,8 +6,8 @@ function Room(data) {
     this.y = (window.innerHeight-100)/2;
     this.layout = []
          
-    data.layout_ordering.foreach((order_name) => {
-        data.layout[order_name].foreach((obj_data) => {
+    data.layout_ordering.forEach((order_name) => {
+        data.layout[order_name].forEach((obj_data) => {
             switch (order_name) {
                 case 'floor':
                     this.layout.push(new Floor(obj_data));
@@ -32,7 +32,7 @@ Room.prototype.getY = function() {
 }
 
 Room.prototype.draw = function() {
-    this.layout.foreach((obj) => {
+    this.layout.forEach((obj) => {
         obj.draw();
     });
 };
