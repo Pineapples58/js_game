@@ -1,5 +1,6 @@
 
 function Room(data) {
+    console.log(data);
     this.name = data.name;
     this.x = (window.innerWidth-100)/2;
     this.y = (window.innerHeight-100)/2;
