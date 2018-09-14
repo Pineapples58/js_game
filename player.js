@@ -37,6 +37,7 @@ Player.prototype.move = function(dir) {
             detect_x = -1;
             break;
     }
+    /*
     let spaces = this.detectContact(detect_x, detect_y);
     if (spaces.every(obj => obj.walkable)) {
         this.undraw();
@@ -47,9 +48,9 @@ Player.prototype.move = function(dir) {
     }
     else if (spaces.every(obj => obj.name == 'door')) {
         this.throughDoor(spaces[0].next_room);
-    }
+    }*/
 };
-
+/*
 Player.prototype.detectContact = function (dx,dy) {
     let loops = (dx != 0)?2:1;
     let spaces = [];
@@ -63,14 +64,13 @@ Player.prototype.detectContact = function (dx,dy) {
     
     return spaces;
 };
-
+*/
 Player.prototype.positionReset = function () {
       this.x = room.getX()+SQR;
       this.y = room.getY()+SQR;
 };
 
 Player.prototype.throughDoor = function (next_room) {
-     console.log(next_room);
      room = new Room(room_data[next_room]);
      player.positionReset();
 }
