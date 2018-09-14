@@ -4,10 +4,16 @@ function Room(data) {
     this.name = data.name;
     this.x = (window.innerWidth-100)/2;
     this.y = (window.innerHeight-100)/2;
-    this.layout = []
-         
-    data.layout_ordering.forEach((order_name) => {
-        data.layout[order_name].forEach((obj_data) => {
+    this.layout = [];
+    this.layout_data = data.layout_data; 
+    this.layout_ordering = data.layout_ordering;
+}
+
+Room.prototype.constructor = Room;
+
+Room.prototype.populateLayout = function(){ 
+    this.layout_ordering.forEach((order_name) => {
+        this.layout_data[order_name].forEach((obj_data) => {
             switch (order_name) {
                 case 'floor':
                     this.layout.push(new Floor(obj_data));
@@ -16,8 +22,6 @@ function Room(data) {
         });       
     });
 }
-
-Room.prototype.constructor = Room;
 
 Room.prototype.addToLayout = function(obj) {
     this.layout.push(obj);
@@ -46,7 +50,7 @@ var room_data = {
   Start_Area : {
     name : 'Start_Area',
     player_start: [3,3],
-    layout : {floor:[{x:0,y:0,x_len:100,y_len:100,fill_color:'green',stroke_color:'green',walkable:true}]},
+    layout_data : {floor:[{x:0,y:0,x_len:100,y_len:100,fill_color:'green',stroke_color:'green',walkable:true}]},
     layout_ordering : ['floor'],
   },
     
