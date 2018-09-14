@@ -32,7 +32,7 @@ Room.prototype.draw = function() {
 };
 
 var room_data = {
-  start : {
+  Start_Area : {
     name : 'Start_Area',
     play_start: [3,3],
     layout : [['w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w'],
@@ -72,7 +72,7 @@ var room_data = {
                              }
                           }
   },
-  first : {
+  First_Area : {
     name : 'First_Area',
     player_start: [8,1],
     layout : [['w','w','w','w','w','w','w','w','d','d','w','w','w','w','w','w','w','w','w','w'],
