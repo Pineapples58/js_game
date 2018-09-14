@@ -70,6 +70,7 @@ Player.prototype.positionReset = function () {
 };
 
 Player.prototype.throughDoor = function (next_room) {
+     console.log(room_data[next_room]);
      room = new Room(room_data[next_room]);
      player.positionReset();
 }
