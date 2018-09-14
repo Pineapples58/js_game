@@ -18,74 +18,49 @@ Player.prototype.undraw = function() {
     c.fillStyle = "#cccdce";
     c.fillRect(this.x,this.y,this.width,this.height);
 };
-    
-Player.prototype.moveUp = function() {
-    let contact = this.detectContact(0,-1);
-    if (contact[0] == 'd') {
-         player.throughDoor(contact[1],contact[2]);
-    }
-    else if (contact[0] != 'w') {
-        this.undraw();
-        this.y -= SQR;
-        this.draw();
-     }
-};
 
-Player.prototype.moveDown = function() {
-    // Need to check to srqs below since player is 2 sqrs tall
-    let contact = this.detectContact(0,2);
-    if (contact[0] == 'd') {
-         player.throughDoor(contact[1],contact[2]);
+Player.prototype.move = function(dir) {
+    let detect_x = 0;
+    let detect_y = 0;
+    switch (dir) {
+        case 'ArrowUp':
+            detect_y = -1;
+            break;
+        case 'ArrowDown':
+            // set to 2 since player is 2 sqr tall
+            detect_y = 2;
+            break;
+        case 'ArrowRight':
+            detect_x = 1;
+            break;
+        case 'ArrowLeft':
+            detect_y = -1;
+            break;
     }
-    else if (contact[0] != 'w') {
+    let spaces = this.detectContact(detect_x, detect_y);
+    if (spaces.every(obj => obj.walkable)) {
         this.undraw();
-        this.y += SQR;
+        this.y += (SQR*detect_y);
+        this.x += (SQR*detect_x);
         this.draw();
     }
-};
-
-Player.prototype.moveLeft = function() {
-    //need to check sqrs form top and bottom sqrs of player
-    let top_contact = this.detectContact(-1,0);
-    let bot_contact = this.detectContact(-1,1);
-    if (top_contact[0] == 'd') {
-        player.throughDoor(top_contact[1], top_contact[2]);
-    }
-    else if (bot_contact[0] == 'd') {
-        player.throughDoor(bot_contact[1], bot_contact[2]);
-    }
-    else if (top_contact[0] != 'w' && bot_contact[0] != 'w') {
-        this.undraw();
-        this.x -= SQR;
-        this.draw();
-    }
-};
-
-Player.prototype.moveRight = function() {
-    //need to check sqrs form top and bottom sqrs of player
-    let top_contact = this.detectContact(1,0);
-    let bot_contact = this.detectContact(1,1);
-    if (top_contact[0] == 'd') {
-        player.throughDoor(top_contact[1], top_contact[2]);
-    }
-    else if (bot_contact[0] == 'd') {
-        player.throughDoor(bot_contact[1], bot_contact[2]);
-    }
-    else if (top_contact[0] != 'w' && bot_contact[0] != 'w') {
-        this.undraw();
-        this.x += SQR;
-        this.draw();
+    else if (spaces.every(obj => obj.name == 'door')) {
+        this.throughDoor(spaces[0].next_room);
     }
 };
 
 Player.prototype.detectContact = function (dx,dy) {
-    let room_x = Math.round((this.x - room.x)/SQR)+dx;
-    let room_y = Math.round((this.y - room.y)/SQR)+dy;
-    let space = room.getSqr(room_x,room_y);
+    let loops = (dx != 0)?2:1;
+    let spaces = [];
+    do {
+        let room_x = Math.round((this.x - room.x)/SQR)+dx;
+        let room_y = Math.round((this.y - room.y)/SQR)+dy;
+        spaces.push(room.getSqr(room_x,room_y));
+        dy++;
+        loops--;
+    }while(loops > 0);
     
-    if (space == 'w') {return ['w'];}
-    else if (space == 'd') {return ['d', room_x, room_y];}
-    else {return false;}
+    return spaces;
 };
 
 Player.prototype.positionReset = function () {
@@ -93,8 +68,8 @@ Player.prototype.positionReset = function () {
       this.y = room.getY()+SQR;
 };
 
-Player.prototype.throughDoor = function (x,y) {
-     room = new Room(room_data.first);
+Player.prototype.throughDoor = function (next_room) {
+     room = new Room(room_data[next_room]);
      player.positionReset();
 }
 
