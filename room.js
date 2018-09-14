@@ -1,11 +1,23 @@
 
 function Room(data) {
     this.name = data.name;
-    this.layout = data.layout.map(arr => {return arr.map(elem => {return data.layout_conversion_key[elem]})});
-    this.x = (window.innerWidth-this.layout[0].length)/2;
-    this.y = (window.innerHeight-this.layout.length)/2;
-    this.color_pallet = data.color_pallet;
+    this.x = (window.innerWidth-100)/2;
+    this.y = (window.innerHeight-100)/2;
+    this.layout = []
+    this.layout_ordering = data.layout_ordering;
+    
+    data.layout_ordering.foreach((order_name) => {
+        data.layout[order_name].foreach((obj_data) => {
+            switch (order_name) {
+                case 'floor':
+                    this.layout.push(new Floor(obj_data));
+                    break;
+            }
+        });       
+    });
 }
+
+Room.prototype.constructor = Room;
 
 Room.prototype.getSqr = function(x,y) {
     return this.layout[y][x];
@@ -20,99 +32,37 @@ Room.prototype.getY = function() {
 }
 
 Room.prototype.draw = function() {
-    let color;
-    for (var i=0; i<this.layout.length; i++) {
-        for (var j=0; j<this.layout[i].length; j++) {
-            c.fillStyle = this.layout[i][j].color;
-            c.strokeStyle = this.layout[i][j].color;
-            c.fillRect(this.x+(j*SQR),this.y+(i*SQR),SQR,SQR);
-            c.strokeRect(this.x+(j*SQR),this.y+(i*SQR),SQR,SQR);
-        }
-    }
+    this.layout.foreach((obj) => {
+        obj.draw();
+    });
 };
 
 var room_data = {
+    
   Start_Area : {
     name : 'Start_Area',
-    play_start: [3,3],
-    layout : [['w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','w','w','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','w','w','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','w','w','w','w','w','w','w','w','d','d','w','w','w','w','w','w','w','w','w']],
-    layout_conversion_key : {'w':{
-                                 name : 'wall',
-                                 color : 'black',
-                                 walkable : false,
-                             },
-                             'f':{
-                                 name : 'floor',
-                                 color : 'green',
-                                 walkable : true,
-                             },
-                             'd':{
-                                 name : 'door',
-                                 color : 'brown',
-                                 walkable : false,
-                                 next_room : 'First_Area',
-                             }
-                          }
+    player_start: [3,3],
+    layout : {floor:[{x:0,y:0,x_len:100,y_len:100,fill_color:'green',stroke_color:'green',walkable:true}]},
+    layout_ordering : ['floor'],
   },
-  First_Area : {
-    name : 'First_Area',
-    player_start: [8,1],
-    layout : [['w','w','w','w','w','w','w','w','d','d','w','w','w','w','w','w','w','w','w','w'],
-              ['w','f','f','f','f','w','f','f','f','f','f','w','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','w','f','f','f','f','f','w','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','w','f','f','f','f','f','w','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','w','f','f','f','f','f','w','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','w','f','f','f','f','f','w','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','w','w','w','w','w','f','w','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','f','w'],
-              ['w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w','w']],
-     layout_conversion_key : {'w':{
-                             name : 'wall',
-                             color : 'black',
-                             walkable : false,
-                             },
-                             'f':{
-                                 name : 'floor',
-                                 color : 'green',
-                                 walkable : true,
-                             },
-                             'd':{
-                                 name : 'door',
-                                 color : 'brown',
-                                 walkable : false,
-                                 next_room : 'Start_Area',
-                             }
-     }
-  }
+    
 };
 
+function Floor(data) {
+    this.x = data.x;
+    this.y = data.y;
+    this.x_len = data.x_len;
+    this.y_len = data.y_len;
+    this.fill_color = data.fill_color;
+    this.stroke_color = data.stroke_color;
+    this.walkable = data.walkable;
+} 
 
+Floor.prototype.draw = function () {
+    c.fillStyle = this.fill_color;
+    c.strokeStyle = this.stroke_color;
+    c.fillRect(this.x, this.y, x_len, y_len);
+    c.strokeRect(this.x, this.y, x_len, y_len);
+}
 
+Floor.prototype.constructor = Floor;
