@@ -26,6 +26,7 @@ function init() {
     // Sets the objects 
     background = new Background();
     room = new Room(room_data.Start_Area);
+    room.populateLayout();
     //player = new Player();
     
     document.onkeydown = function(e) {
