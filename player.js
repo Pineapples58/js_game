@@ -39,7 +39,6 @@ Player.prototype.move = function(dir) {
     }
     let spaces = this.detectContact(detect_x, detect_y);
     if (spaces.every(obj => obj.walkable)) {
-        console.log(spaces[0]);
         this.undraw();
         detect_y = (detect_y == 2)?1:detect_y;
         this.y += (SQR*detect_y);
