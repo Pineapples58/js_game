@@ -110,6 +110,7 @@ var room_data = {
                                  walkable : false,
                                  next_room : 'Start_Area',
                              }
+                              
      }
   }
 };
