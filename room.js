@@ -100,8 +100,9 @@ function Door(data) {
     Floor.call(this,data);
     this.next_room = data.next_room;
 }
-Door.prototype.constructor = Door;
+
 Door.prototype = Object.create(Floor.prototype);
+Door.prototype.constructor = Door;
 Door.prototype.interact = function () {
     room = new Room(room_data[this.next_room]);
     room.populateLayout();
@@ -109,3 +110,12 @@ Door.prototype.interact = function () {
     player.y = room.player_start.y;
 };
 
+function Crate (data) {
+    Floor.call(this,data);
+}
+
+Crate.prototype = Object.create(Floor.prototype);
+Crate.prototype.constructor = Crate;
+Crate.prototype.interact = function () {
+    
+}
