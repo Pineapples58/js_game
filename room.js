@@ -101,7 +101,6 @@ function Door(data) {
 Door.prototype.constructor = Door;
 Door.prototype = Object.create(Floor.prototype);
 Door.prototype.interact = function () {
-    console.log(this.next_room);
     console.log(room_data[this.next_room]);
     room = new Room(room_data[this.next_room]);
 };
