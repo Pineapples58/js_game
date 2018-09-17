@@ -50,7 +50,7 @@ var room_data = {
   Start_Area : {
     name : 'Start_Area',
     player_start: [3,3],
-    layout_data : {floor:[{x:0,y:0,x_len:500,y_len:500,fill_color:'green',stroke_color:'green',walkable:true, has_interaction:false}],
+    layout_data : {floor:[{x:0,y:0,x_len:500,y_len:500,fill_color:'green',stroke_color:'#9e9e9e',walkable:true, has_interaction:false}],
                    wall:[{x:0,y:0,x_len:500,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:0,y:0,x_len:5,y_len:500,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:495,y:0,x_len:5,y_len:500,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
