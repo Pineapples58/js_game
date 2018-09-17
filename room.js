@@ -129,7 +129,7 @@ Crate.prototype.interact = function () {
 Crate.prototype.open = function () {
     let div = document.createElement('div');
     let table = document.createElement('table');
-    let tbody = documnet.createElement('tbody');
+    let tbody = document.createElement('tbody');
     
     let tr,td;
     for (var i=0; i<this.inventory.length; i++) {
