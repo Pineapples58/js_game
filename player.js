@@ -67,10 +67,31 @@ Player.prototype.detectContact = function (dx, dy) {
 
 Player.prototype.setX = function (x) {
     this.x = x;
-}
+};
 
 Player.prototype.setY = function (y) {
     this.y = y;
-}
+};
+
+Player.prototype.addInventory = function (item) {
+    this.inventory.push(item);
+};
+    
+Player.prototype.updateInventory = function (item) {
+    let table = document.getElementById('player_info').getElementsByTagName('table');
+    while (table.firstChild) {
+        table.removeChild(table.firstChild);
+    }
+    
+    let tbody = document.createElement('tbody');
+    for (var i=0; i<this.inventory.length; i++) {
+        let tr = document.createElement('tr');
+        let td = document.createElement('td');
+        td.innerHTML = this.inventory[i];
+        tr.appendChild(td);
+        tbody.appendChild(tr);
+    }
+    table.appendChild(tbody);
+};
 
 
