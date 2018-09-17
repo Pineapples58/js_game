@@ -125,7 +125,10 @@ Crate.prototype.constructor = Crate;
 Crate.prototype.interact = function () {
     this.open();
 }
-// CHANGE this put the 
+// CHANGE this put a div with id crateArea or something
+//append table to it make sure only one table at a time
+//set location of that div in here too
+
 Crate.prototype.open = function () {
     let div = document.createElement('div');
     let table = document.createElement('table');
