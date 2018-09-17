@@ -125,7 +125,7 @@ Crate.prototype.constructor = Crate;
 Crate.prototype.interact = function () {
     this.open();
 }
-
+// CHANGE this put the 
 Crate.prototype.open = function () {
     let div = document.createElement('div');
     let table = document.createElement('table');
@@ -141,7 +141,7 @@ Crate.prototype.open = function () {
         tbody.appendChild(td);
     }
     table.appendChild(tbody);
-    div.appendChild(td);
+    div.appendChild(table);
     div.style.zIndex = 5;
     div.style.position = 'absolute';
     div.style.left = this.x;
