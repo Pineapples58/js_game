@@ -62,13 +62,13 @@ var room_data = {
   },
   First_Area : {
     name : 'First_Area',
-    player_start: {x:3,y:3},
-    layout_data : {floor:[{x:0,y:0,x_len:100,y_len:100,fill_color:'green',stroke_color:'green',walkable:true, has_interaction:false}],
-                   wall:[{x:0,y:0,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
-                         {x:0,y:0,x_len:5,y_len:100,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
-                         {x:95,y:0,x_len:5,y_len:100,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
-                         {x:0,y:95,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false}],
-                   door:[{x:10,y:80,x_len:10,y_len:10,fill_color:'pink',stroke_color:'pink',walkable:true, has_interaction:true, next_room:""}]
+    player_start: {x:100,y:300},
+    layout_data : {floor:[{x:0,y:0,x_len:500,y_len:500,fill_color:'green',stroke_color:'#9e9e9e',walkable:true, has_interaction:false}],
+                   wall:[{x:0,y:0,x_len:500,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:0,y:0,x_len:5,y_len:500,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:495,y:0,x_len:5,y_len:500,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:0,y:495,x_len:500,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false}],
+                   door:[{x:100,y:480,x_len:10,y_len:10,fill_color:'pink',stroke_color:'pink',walkable:true, has_interaction:true, next_room:'First_Area'}]
                   },
     layout_ordering : ['floor','wall', 'door']
   },  
@@ -105,5 +105,7 @@ Door.prototype = Object.create(Floor.prototype);
 Door.prototype.interact = function () {
     room = new Room(room_data[this.next_room]);
     room.populateLayout();
+    player.x = room.player_start.x;
+    player.y = room.player_start.y;
 };
 
