@@ -7,14 +7,14 @@ function draw_game() {
     player.draw();
     requestAnimationFrame(draw_game);
 }
-
+/*
 function canvas_size () {
     canvas.width  = window.innerWidth-5;
     canvas.height = window.innerHeight-5;
 }
 
 window.resize = canvas_size;
-
+*/
 function init() {
     // Set constants
     SQR = 5;
@@ -35,7 +35,7 @@ function init() {
             player.move(e.key);
         }
     };
-    canvas_size();
+    //canvas_size();
     draw_game();
 }
 window.onload = init;
