@@ -1,5 +1,6 @@
 
 function Room(data) {
+    console.log("in room"+data);
     this.name = data.name;
     this.x = (window.innerWidth-100)/2;
     this.y = (window.innerHeight-100)/2;
@@ -57,8 +58,7 @@ var room_data = {
                          {x:0,y:95,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false}],
                    door:[{x:80,y:80,x_len:10,y_len:10,fill_color:'pink',stroke_color:'pink',walkable:true, has_interaction:true, next_room:'First_Area'}]
                   },
-    layout_ordering : ['floor','wall', 'door'],
-    next_room : 'First_Area',
+    layout_ordering : ['floor','wall', 'door']
   },
   First_Area : {
     name : 'First_Area',
@@ -70,7 +70,7 @@ var room_data = {
                          {x:0,y:95,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false}],
                    door:[{x:10,y:90,x_len:10,y_len:10,fill_color:'pick',stroke_color:'pink',walkable:true, has_interaction:true}]
                   },
-    layout_ordering : ['floor','wall', 'door'],
+    layout_ordering : ['floor','wall', 'door']
   },  
     
 };
