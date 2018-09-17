@@ -20,41 +20,52 @@ Player.prototype.undraw = function() {
 };
 
 Player.prototype.move = function(dir) {
-    let detect_x = 0;
-    let detect_y = 0;
+    let dx = 0;
+    let dy = 0;
     switch (dir) {
         case 'ArrowUp':
-            detect_y = -1;
+            dy = -SQR;
             break;
         case 'ArrowDown':
-            // set to 2 since player is 2 sqr tall
-            detect_y = 2;
+            dy = SQR;
             break;
         case 'ArrowRight':
-            detect_x = 1;
+            dx = SQR;
             break;
         case 'ArrowLeft':
-            detect_x = -1;
+            dx = -SQR;
             break;
     }
+    
+    let contact = this.detectContact(dx, dy);
+    if (!contact) {
         this.undraw();
-        detect_y = (detect_y == 2)?1:detect_y;
-        this.y += (SQR*detect_y);
-        this.x += (SQR*detect_x);
-        this.draw();
-    /*
-    let spaces = this.detectContact(detect_x, detect_y);
-    if (spaces.every(obj => obj.walkable)) {
-        this.undraw();
-        detect_y = (detect_y == 2)?1:detect_y;
-        this.y += (SQR*detect_y);
-        this.x += (SQR*detect_x);
+        this.y += (dy);
+        this.x += (dx);
         this.draw();
     }
-    else if (spaces.every(obj => obj.name == 'door')) {
-        this.throughDoor(spaces[0].next_room);
-    }*/
+    //else if (spaces.every(obj => obj.name == 'door')) {
+    //    this.throughDoor(spaces[0].next_room);
+    //}
 };
+
+Player.prototype.detectContact = function (dx, dy) {
+    
+    for (var i = 0; i<room.layout; i++) {
+        if (room.layout[i].walkable) {
+            continue;
+        }
+        else {
+            if ((Math.max((this.x+dx),room.layout[i].x) < Math.min((this.x+this.width+dx),(room.layout[i].x+room.layout[i].x_len))) && (Math.max((this.y+dy),room.layout[i].y) < Math.min((this.y+this.height+dy),(room.layout[i].y+room.layout[i].y_len)))) {
+                //if room.layout[i].interaction 
+                return true;
+            }
+        }
+    }
+    return false;
+};
+
+
 /*
 Player.prototype.detectContact = function (dx,dy) {
     let loops = (dx != 0)?2:1;
