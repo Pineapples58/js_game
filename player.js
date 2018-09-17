@@ -37,57 +37,37 @@ Player.prototype.move = function(dir) {
             break;
     }
     
-    let contact = this.detectContact(dx, dy);
-    if (!contact) {
+    let obj_contacted = this.detectContact(dx, dy);
+    if (!obj_contacted || obj_contacted.walkable) {
         this.undraw();
         this.y += (dy);
         this.x += (dx);
         this.draw();
     }
-    //else if (spaces.every(obj => obj.name == 'door')) {
-    //    this.throughDoor(spaces[0].next_room);
-    //}
+    if (obj_contacted && obj_contacted.has_interaction) {
+        obj_contacted.interact();
+    }
 };
 
 Player.prototype.detectContact = function (dx, dy) {
     
     for (var i = 0; i<room.layout.length; i++) {
         if (room.layout[i].walkable) {
-            continue;
+            if (!room.layout[i].has_interaction) {
+                continue;
+            }
+            else {
+                return room.layout[i];
+            }
         }
         else {
             if ((Math.max((this.x+dx),room.layout[i].x) < Math.min((this.x+this.width+dx),(room.layout[i].x+room.layout[i].x_len))) && (Math.max((this.y+dy),room.layout[i].y) < Math.min((this.y+this.height+dy),(room.layout[i].y+room.layout[i].y_len)))) {
                 //if room.layout[i].interaction 
-                return true;
+                return room.layout[i];
             }
         }
     }
     return false;
 };
 
-
-/*
-Player.prototype.detectContact = function (dx,dy) {
-    let loops = (dx != 0)?2:1;
-    let spaces = [];
-    do {
-        let room_x = Math.round((this.x - room.x)/SQR)+dx;
-        let room_y = Math.round((this.y - room.y)/SQR)+dy;
-        spaces.push(room.getSqr(room_x,room_y));
-        dy++;
-        loops--;
-    }while(loops > 0);
-    
-    return spaces;
-};
-*/
-Player.prototype.positionReset = function () {
-      this.x = room.getX()+SQR;
-      this.y = room.getY()+SQR;
-};
-
-Player.prototype.throughDoor = function (next_room) {
-     room = new Room(room_data[next_room]);
-     player.positionReset();
-}
 
