@@ -23,6 +23,10 @@ Room.prototype.populateLayout = function(){
                     break;
                 case 'door':
                     this.layout.push(new Door(obj_data));
+                    break;
+                case 'crate':
+                    this.layout.push(new Crate(obj_data));
+                    break;
             }
         });       
     });
@@ -113,10 +117,11 @@ Door.prototype.interact = function () {
 
 function Crate (data) {
     Floor.call(this,data);
+    this.inventory = data.inventory;
 }
 
 Crate.prototype = Object.create(Floor.prototype);
 Crate.prototype.constructor = Crate;
 Crate.prototype.interact = function () {
-    
+    console.log('here');
 }
