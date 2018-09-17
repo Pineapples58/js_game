@@ -141,6 +141,12 @@ Crate.prototype.open = function () {
         tbody.appendChild(td);
     }
     table.appendChild(tbody);
-    div.appendChild(td);                                 
+    div.appendChild(td);
+    div.style.zIndex = 5;
+    div.style.position = 'absolute';
+    div.style.left = this.x;
+    div.style.top = this.y;
+    
+    document.getElementById('gameArea').appendChild(div);
 }
 
