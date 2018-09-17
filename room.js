@@ -63,12 +63,12 @@ var room_data = {
   First_Area : {
     name : 'First_Area',
     player_start: [3,3],
-    layout_data : {floor:[{x:0,y:0,x_len:100,y_len:100,fill_color:'green',stroke_color:'green',walkable:true}],
-                   wall:[{x:0,y:0,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false},
-                         {x:0,y:0,x_len:5,y_len:100,fill_color:'black',stroke_color:'black',walkable:false},
-                         {x:95,y:0,x_len:5,y_len:100,fill_color:'black',stroke_color:'black',walkable:false},
-                         {x:0,y:95,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false}],
-                   door:[{x:10,y:90,x_len:10,y_len:10,fill_color:'pick',stroke_color:'pink',walkable:true}]
+    layout_data : {floor:[{x:0,y:0,x_len:100,y_len:100,fill_color:'green',stroke_color:'green',walkable:true, has_interaction:false}],
+                   wall:[{x:0,y:0,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:0,y:0,x_len:5,y_len:100,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:95,y:0,x_len:5,y_len:100,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:0,y:95,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false}],
+                   door:[{x:10,y:90,x_len:10,y_len:10,fill_color:'pick',stroke_color:'pink',walkable:true, has_interaction:true}]
                   },
     layout_ordering : ['floor','wall', 'door'],
   },  
@@ -83,6 +83,7 @@ function Floor(data) {
     this.fill_color = data.fill_color;
     this.stroke_color = data.stroke_color;
     this.walkable = data.walkable;
+    this.has_interaction = data.has_interaction;
 } 
 
 Floor.prototype.draw = function () {
