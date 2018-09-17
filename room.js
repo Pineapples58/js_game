@@ -1,6 +1,5 @@
 
 function Room(data) {
-    console.log("in room"+data);
     this.name = data.name;
     this.x = (window.innerWidth-100)/2;
     this.y = (window.innerHeight-100)/2;
@@ -101,7 +100,6 @@ function Door(data) {
 Door.prototype.constructor = Door;
 Door.prototype = Object.create(Floor.prototype);
 Door.prototype.interact = function () {
-    console.log(room_data[this.next_room]);
     room = new Room(room_data[this.next_room]);
     room.populateLayout();
 };
