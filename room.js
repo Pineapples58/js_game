@@ -1,6 +1,5 @@
 
 function Room(data) {
-    console.log(data.layout_ordering);
     this.name = data.name;
     this.x = (window.innerWidth-100)/2;
     this.y = (window.innerHeight-100)/2;
@@ -24,7 +23,7 @@ Room.prototype.populateLayout = function(){
             }
         });       
     });
-}
+};
 
 Room.prototype.addToLayout = function(obj) {
     this.layout.push(obj);
@@ -36,11 +35,11 @@ Room.prototype.getSqr = function(x,y) {
 
 Room.prototype.getX = function() {
     return this.x;   
-}
+};
 
 Room.prototype.getY = function() {
     return this.y;   
-}
+};
 
 Room.prototype.draw = function() {
     this.layout.forEach((obj) => {
@@ -79,7 +78,12 @@ Floor.prototype.draw = function () {
     c.strokeStyle = this.stroke_color;
     c.fillRect(this.x, this.y, this.x_len, this.y_len);
     c.strokeRect(this.x, this.y, this.x_len, this.y_len);
-}
-
+};
 Floor.prototype.constructor = Floor;
 
+function Door(data) {
+    Floor.call(this,data);
+    this.next_room = "";
+}
+Door.prototype = Object.create(Floor.prototype);
+Door.prototype.constructor = Door;
