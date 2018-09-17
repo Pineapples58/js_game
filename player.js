@@ -52,6 +52,7 @@ Player.prototype.move = function(dir) {
 Player.prototype.detectContact = function (dx, dy) {
     
     for (var i = 0; i<room.layout; i++) {
+        console.log(room.layout[i]);
         if (room.layout[i].walkable) {
             continue;
         }
