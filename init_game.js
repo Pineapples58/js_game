@@ -2,7 +2,7 @@
 let canvas, c, player, background, room, SQR; 
 
 function draw_game() {
-    background.draw();
+    //background.draw();
     room.draw();
     player.draw();
     requestAnimationFrame(draw_game);
@@ -24,7 +24,7 @@ function init() {
     c = canvas.getContext('2d');   
 
     // Sets the objects 
-    background = new Background();
+    //background = new Background();
     room = new Room(room_data.Start_Area);
     room.populateLayout();
     player = new Player(room.player_start);
