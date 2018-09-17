@@ -56,7 +56,20 @@ var room_data = {
                    door:[{x:90,y:90,x_len:10,y_len:10,fill_color:'pick',stroke_color:'pink',walkable:true}]
                   },
     layout_ordering : ['floor','wall', 'door'],
+    next_room : 'First_Area',
   },
+  First_Area : {
+    name : 'First_Area',
+    player_start: [3,3],
+    layout_data : {floor:[{x:0,y:0,x_len:100,y_len:100,fill_color:'green',stroke_color:'green',walkable:true}],
+                   wall:[{x:0,y:0,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false},
+                         {x:0,y:0,x_len:5,y_len:100,fill_color:'black',stroke_color:'black',walkable:false},
+                         {x:95,y:0,x_len:5,y_len:100,fill_color:'black',stroke_color:'black',walkable:false},
+                         {x:0,y:95,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false}],
+                   door:[{x:10,y:90,x_len:10,y_len:10,fill_color:'pick',stroke_color:'pink',walkable:true}]
+                  },
+    layout_ordering : ['floor','wall', 'door'],
+  },  
     
 };
 
@@ -80,7 +93,7 @@ Floor.prototype.constructor = Floor;
 
 function Door(data) {
     Floor.call(this,data);
-    this.next_room = "";
+    this.next_room = data.next_room;
 }
 Door.prototype = Object.create(Floor.prototype);
 Door.prototype.constructor = Door;
