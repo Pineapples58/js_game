@@ -29,10 +29,6 @@ Room.prototype.addToLayout = function(obj) {
     this.layout.push(obj);
 };
 
-Room.prototype.getSqr = function(x,y) {
-    return this.layout[y][x];
-};
-
 Room.prototype.getX = function() {
     return this.x;   
 };
@@ -56,9 +52,10 @@ var room_data = {
                    wall:[{x:0,y:0,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false},
                          {x:0,y:0,x_len:5,y_len:100,fill_color:'black',stroke_color:'black',walkable:false},
                          {x:95,y:0,x_len:5,y_len:100,fill_color:'black',stroke_color:'black',walkable:false},
-                         {x:0,y:95,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false}]
+                         {x:0,y:95,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false}],
+                   door:[{x:90,y:90,x_len:10,y_len:10,fill_color:'pick',stroke_color:'pink',walkable:true}]
                   },
-    layout_ordering : ['floor','wall'],
+    layout_ordering : ['floor','wall', 'door'],
   },
     
 };
