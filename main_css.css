@@ -16,7 +16,9 @@ body {
 
 .player_info {
   z-index:5;
-  
+  position:absolute;
+  left:100px;
+  top:10px;
 }
 
 
