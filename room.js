@@ -6,7 +6,7 @@ function Room(data) {
     this.layout = [];
     this.layout_data = data.layout_data; 
     this.layout_ordering = data.layout_ordering;
-    this.player_start = data.player_start;
+    this.player_start = {x:data.player_start.x+this.x, y:data.player_start.y+this.y};
 }
 
 Room.prototype.constructor = Room;
