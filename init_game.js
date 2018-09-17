@@ -27,7 +27,7 @@ function init() {
     background = new Background();
     room = new Room(room_data.Start_Area);
     room.populateLayout();
-    player = new Player();
+    player = new Player(room.player_start);
     
     document.onkeydown = function(e) {
         if (e.key == 'ArrowLeft' || e.key == 'ArrowUp' || e.key == 'ArrowRight' || e.key == 'ArrowDown') {
