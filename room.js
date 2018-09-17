@@ -1,8 +1,8 @@
 
 function Room(data) {
     this.name = data.name;
-    this.x = (window.innerWidth-100)/2;
-    this.y = (window.innerHeight-100)/2;
+    this.x = (window.innerWidth-500)/2;
+    this.y = (window.innerHeight-500)/2;
     this.layout = [];
     this.layout_data = data.layout_data; 
     this.layout_ordering = data.layout_ordering;
@@ -53,8 +53,8 @@ var room_data = {
     layout_data : {floor:[{x:0,y:0,x_len:500,y_len:500,fill_color:'green',stroke_color:'green',walkable:true, has_interaction:false}],
                    wall:[{x:0,y:0,x_len:500,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:0,y:0,x_len:5,y_len:500,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
-                         {x:95,y:0,x_len:5,y_len:500,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
-                         {x:0,y:95,x_len:500,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false}],
+                         {x:495,y:0,x_len:5,y_len:500,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:0,y:495,x_len:500,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false}],
                    door:[{x:480,y:480,x_len:10,y_len:10,fill_color:'pink',stroke_color:'pink',walkable:true, has_interaction:true, next_room:'First_Area'}]
                   },
     layout_ordering : ['floor','wall', 'door']
