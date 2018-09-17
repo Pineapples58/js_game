@@ -98,5 +98,9 @@ function Door(data) {
     Floor.call(this,data);
     this.next_room = data.next_room;
 }
-Door.prototype = Object.create(Floor.prototype);
 Door.prototype.constructor = Door;
+Door.prototype = Object.create(Floor.prototype);
+Door.prototype.interact = function () {
+    room = new Room(this.next_room);
+};
+
