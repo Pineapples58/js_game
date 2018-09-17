@@ -63,7 +63,7 @@ var room_data = {
                    door:[{x:480,y:480,x_len:10,y_len:10,fill_color:'pink',stroke_color:'pink',walkable:true, has_interaction:true, next_room:'First_Area'}],
                    crate:[{x:200,y:200,x_len:5,y_len:5,fill_color:'brown',stroke_color:'brown',walkable:false, has_interaction:true}]
                   },
-    layout_ordering : ['floor','wall', 'door']
+    layout_ordering : ['floor','wall', 'door','crate']
   },
   First_Area : {
     name : 'First_Area',
