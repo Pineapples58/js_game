@@ -38,6 +38,7 @@ Player.prototype.move = function(dir) {
     }
     
     let obj_contacted = this.detectContact(dx, dy);
+    console.log(obj_contacted);
     if (!obj_contacted || obj_contacted.walkable) {
         this.undraw();
         this.y += (dy);
