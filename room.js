@@ -20,6 +20,8 @@ Room.prototype.populateLayout = function(){
                 case 'wall':
                     this.layout.push(new Floor(obj_data));
                     break;
+                case 'door':
+                    this.layout.push(new Door(obj_data));
             }
         });       
     });
