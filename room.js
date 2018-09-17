@@ -103,5 +103,6 @@ Door.prototype = Object.create(Floor.prototype);
 Door.prototype.interact = function () {
     console.log(room_data[this.next_room]);
     room = new Room(room_data[this.next_room]);
+    room.populateLayout();
 };
 
