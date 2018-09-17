@@ -18,6 +18,9 @@ Room.prototype.populateLayout = function(){
                 case 'floor':
                     this.layout.push(new Floor(obj_data));
                     break;
+                case 'wall':
+                    this.layout.push(new Floor(obj_data));
+                    break;
             }
         });       
     });
@@ -50,7 +53,12 @@ var room_data = {
   Start_Area : {
     name : 'Start_Area',
     player_start: [3,3],
-    layout_data : {floor:[{x:0,y:0,x_len:100,y_len:100,fill_color:'green',stroke_color:'green',walkable:true}]},
+    layout_data : {floor:[{x:0,y:0,x_len:100,y_len:100,fill_color:'green',stroke_color:'green',walkable:true}],
+                   wall:[{x:0,y:0,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false},
+                         {x:0,y:0,x_len:5,y_len:100,fill_color:'black',stroke_color:'black',walkable:false},
+                         {x:95,y:0,x_len:5,y_len:100,fill_color:'black',stroke_color:'black',walkable:false},
+                         {x:0,y:95,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false}]
+                  },
     layout_ordering : ['floor'],
   },
     
@@ -74,3 +82,4 @@ Floor.prototype.draw = function () {
 }
 
 Floor.prototype.constructor = Floor;
+
