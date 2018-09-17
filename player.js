@@ -75,9 +75,10 @@ Player.prototype.setY = function (y) {
 
 Player.prototype.addInventory = function (item) {
     this.inventory.push(item);
+    this.updateInventory();
 };
     
-Player.prototype.updateInventory = function (item) {
+Player.prototype.updateInventory = function () {
     let table = document.getElementById('player_info').getElementsByTagName('table');
     while (table.firstChild) {
         table.removeChild(table.firstChild);
