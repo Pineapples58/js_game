@@ -1,7 +1,7 @@
-function Player () {
+function Player (position) {
     this.location = "start";
-    this.x = room.getX()+SQR;
-    this.y = room.getY()+SQR;
+    this.x = position.x;
+    this.y = position.y;
     this.height = 10;
     this.width = 5;
     this.color = 'green';
@@ -64,5 +64,13 @@ Player.prototype.detectContact = function (dx, dy) {
     }
     return false;
 };
+
+Player.prototype.setX = function (x) {
+    this.x = x;
+}
+
+Player.prototype.setY = function (y) {
+    this.y = y;
+}
 
 
