@@ -59,7 +59,7 @@ var room_data = {
                          {x:95,y:0,x_len:5,y_len:100,fill_color:'black',stroke_color:'black',walkable:false},
                          {x:0,y:95,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false}]
                   },
-    layout_ordering : ['floor'],
+    layout_ordering : ['floor','wall'],
   },
     
 };
