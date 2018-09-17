@@ -57,6 +57,7 @@ Player.prototype.detectContact = function (dx, dy) {
             continue;
         }
         else {
+            console.log('not walkable');
             if ((Math.max((this.x+dx),room.layout[i].x) < Math.min((this.x+this.width+dx),(room.layout[i].x+room.layout[i].x_len))) && (Math.max((this.y+dy),room.layout[i].y) < Math.min((this.y+this.height+dy),(room.layout[i].y+room.layout[i].y_len)))) {
                 //if room.layout[i].interaction 
                 return true;
