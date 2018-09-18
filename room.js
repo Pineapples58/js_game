@@ -27,6 +27,9 @@ Room.prototype.populateLayout = function(){
                 case 'crate':
                     this.layout.push(new Crate(obj_data));
                     break;
+                case 'enemy':
+                    this.layout.push(new Crate());
+                    break;
             }
         });       
     });
