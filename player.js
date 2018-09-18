@@ -79,7 +79,7 @@ Player.prototype.addInventory = function (item) {
 };
     
 Player.prototype.updateInventory = function () {
-    let table = document.getElementById('player_info').getElementsByTagName('table');
+    let table = document.getElementsByClassName('player_info')[0].getElementsByTagName('table');
     while (table.firstChild) {
         table.removeChild(table.firstChild);
     }
