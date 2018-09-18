@@ -8,6 +8,7 @@ function Enemy() {
     this.alive = true;
     this.damageable = true;
     this.walkable = false;
+    this.has_interaction = false;
 }
 Enemy.prototype.constuctor = Enemy;
 
