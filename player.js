@@ -79,21 +79,28 @@ Player.prototype.addInventory = function (item) {
 };
     
 Player.prototype.updateInventory = function () {
-    let table = document.getElementsByClassName('player_info')[0].getElementsByTagName('table');
+    let table = document.getElementsByClassName('player_info')[0].getElementsByTagName('table')[0];
     console.log(table);
     while (table.firstChild) {
         table.removeChild(table.firstChild);
     }
     
-    //let tbody = document.createElement('tbody');
+    let tbody = document.createElement('tbody');
+    let tr,td;
+    tr = document.createElement('tr');
+        td = document.createElement('td');
+        td.innerHTML = 'Inventory';
+        td.style.textDecoration = 'underline';
+        tr.appendChild(td);
+        tbody.appendChild(tr);
     for (var i=0; i<this.inventory.length; i++) {
-        let tr = document.createElement('tr');
-        let td = document.createElement('td');
+        tr = document.createElement('tr');
+        td = document.createElement('td');
         td.innerHTML = this.inventory[i];
         tr.appendChild(td);
-        table.appendChild(tr);
+        tbody.appendChild(tr);
     }
-    //table.appendChild(tbody);
+    table.appendChild(tbody);
 };
 
 
