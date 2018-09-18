@@ -20,3 +20,8 @@ Enemy.prototype.beenHit = function (dmg) {
        console.log('hit');
     }
 };
+
+Player.prototype.draw = function() {
+    c.fillStyle = "red";
+    c.fillRect(this.x,this.y,5,5);
+};
