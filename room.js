@@ -138,7 +138,7 @@ Crate.prototype.open = function () {
         td = document.createElement('td');
         td.innerHTML = this.inventory[i];
         td.onclick = (function (obj) {return function() {
-            let row_num = this.rowIndex;
+            let row_num = this.parentElement.rowIndex;
             player.addInventory(obj.inventory[row_num]);
             obj.inventory.splice(row_num,1);
             table.deleteRow(row_num);
