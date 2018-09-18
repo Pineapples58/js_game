@@ -144,7 +144,7 @@ Crate.prototype.open = function () {
             let row_num = this.id.split('_')[0];
             player.addInventory(obj.inventory[row_num]);
             table.deleteRow(row_num);}})(this);
-        }
+        };
         tr.appendChild(td);
         tbody.appendChild(td);
     }
