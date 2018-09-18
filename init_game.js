@@ -34,6 +34,9 @@ function init() {
             e.preventDefault();
             player.move(e.key);
         }
+        if (e.key == 'Control') {
+            player.attack();
+        }
     };
     canvas_size();
     draw_game();
