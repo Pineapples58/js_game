@@ -54,13 +54,14 @@ var room_data = {
     
   Start_Area : {
     name : 'Start_Area',
-    player_start: {x:30,y:30},
+    player_start: {x:10,y:10},
     layout_data : {floor:[{x:0,y:0,x_len:500,y_len:500,fill_color:'#9e9e9e',stroke_color:'#9e9e9e',walkable:true, has_interaction:false}],
                    wall:[{x:0,y:0,x_len:500,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:0,y:0,x_len:5,y_len:500,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:495,y:0,x_len:5,y_len:500,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:0,y:495,x_len:500,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
-                         {x:20,y:0,x_len:5,y_len:300,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:20,y:0,x_len:5,y_len:30,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:20,y:40,x_len:5,y_len:260,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:20,y:300,x_len:50,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                         ],
                    door:[{x:480,y:480,x_len:10,y_len:10,fill_color:'pink',stroke_color:'pink',walkable:true, has_interaction:true, next_room:'First_Area'}],
