@@ -139,6 +139,7 @@ Crate.prototype.open = function () {
         tr = document.createElement('tr');
         td = document.createElement('tr');
         td.innerHTML = this.inventory[i];
+        console.log(i+' '+this.inventory[i]);
         td.onclick = (function (obj) {return function(){console.log(i);player.addInventory(obj.inventory[i]);table.deleteRow(i);}})(this);
         //td.onclick = function () {player.addInventory(this.innerHTML);table.deleteRow(i);};
         tr.appendChild(td);
