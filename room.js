@@ -142,8 +142,10 @@ Crate.prototype.open = function () {
         td.id = "crateInventory_"+i;
         td.onclick = (function (obj) {return function() {
             //let row_num = this.id.split('_')[1];
+            let row_num = this.rowIndex;
             console.log(this);
             player.addInventory(obj.inventory[row_num]);
+            obj.inventory.splice(row_num,1);
             table.deleteRow(row_num);
         }})(this);
         
