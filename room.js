@@ -161,7 +161,7 @@ Crate.prototype.close = function () {
         div.removeChild(div.firstChild);
     }
     div.style.left = ''; 
-    div.stlye.top = '';
+    div.style.top = '';
 }
 
 
