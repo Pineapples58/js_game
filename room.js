@@ -139,7 +139,12 @@ Crate.prototype.open = function () {
         tr = document.createElement('tr');
         td = document.createElement('tr');
         td.innerHTML = this.inventory[i];
-        td.onclick = (function (obj) {return function(){player.addInventory(obj.inventory[i-1]);table.deleteRow(i-1);}})(this);
+        td.id = "crateInventory_"+i;
+        td.onclick = (function (obj) {return function(){
+            let row_num = this.id.split('_')[0];
+            player.addInventory(obj.inventory[row_num]);
+            table.deleteRow(row_num);}})(this);
+        }
         tr.appendChild(td);
         tbody.appendChild(td);
     }
