@@ -1,6 +1,6 @@
 
 function Background(color) {
-    this.color = color || "#cccdce";
+    this.color = color || "#61d1f9";
 }
 
 Background.prototype.draw = function() {
