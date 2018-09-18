@@ -25,6 +25,7 @@ Room.prototype.populateLayout = function(){
                     this.layout.push(new Door(obj_data));
                     break;
                 case 'crate':
+                    console.log(obj_data);
                     this.layout.push(new Crate(obj_data));
                     break;
                 case 'enemy':
