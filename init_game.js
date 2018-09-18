@@ -34,7 +34,7 @@ function init() {
             e.preventDefault();
             player.move(e.key);
         }
-        if (e.key == 'Control') {
+        else if (e.key == 'Control') {
             player.attack();
         }
     };
