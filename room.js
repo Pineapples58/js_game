@@ -146,8 +146,8 @@ Crate.prototype.open = function () {
     table.appendChild(tbody);
     div.appendChild(table);
     //div.style.position = 'absolute';
-    div.style.left = this.x;
-    div.style.top = this.y;
+    div.style.left = this.x+'px';
+    div.style.top = this.y+'px';
     
 }
 
