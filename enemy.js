@@ -8,6 +8,7 @@ function Enemy() {
     this.alive = true;
     this.damageable = true;
 }
+Enemy.prototype.constuctor = Enemy;
 
 Enemy.prototype.beenHit = function (dmg) {
     if (dmg >= this.health) {
