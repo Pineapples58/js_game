@@ -113,7 +113,7 @@ Player.prototype.updateInventory = function () {
 
 Player.prototype.attack = function () {
     
-    let contacted = player.detectContact(5,0);
+    let contacted = this.detectContact(5,0);
     console.log(contacted);
     if (contacted.isDamageable) {
         contacted.beenHit(this.damage);
