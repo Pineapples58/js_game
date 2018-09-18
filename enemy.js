@@ -1,6 +1,6 @@
 function Enemy() {
-    this.x = 50;
-    this.y = 50;
+    this.x = room.x+50;
+    this.y = room.y+50;
     this.speed = 2;
     this.health = 5;
     this.damage = 1;
