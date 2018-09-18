@@ -6,6 +6,7 @@ function Enemy() {
     this.damage = 1;
     this.color = 'red';
     this.alive = true;
+    this.damageable = true;
 }
 
 Enemy.prototype.beenHit = function (dmg) {
