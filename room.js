@@ -83,7 +83,7 @@ var room_data = {
                         ],
                    door:[{x:480,y:480,x_len:10,y_len:10,fill_color:'pink',stroke_color:'pink',walkable:true, has_interaction:true, next_room:'First_Area'}],
                    crate:[{x:50,y:50,x_len:5,y_len:5,fill_color:'yellow',stroke_color:'yellow',walkable:false, has_interaction:true, inventory:['torch','sword']}],
-                   enemy:[{c:2}],
+                   enemy:[{x:100}]
                   },
     layout_ordering : ['floor','wall', 'door','crate','enemy']
   },
