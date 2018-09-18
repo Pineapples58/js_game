@@ -59,11 +59,11 @@ Player.prototype.move = function(dir) {
 Player.prototype.detectContact = function (dx, dy) {
     
     for (var i = 0; i<room.layout.length; i++) {
-        console.log(room.layout[i])
         if (room.layout[i].walkable && !room.layout[i].has_interaction) {
             continue;
         }
-        else {
+        else {        console.log(room.layout[i]);
+
             if ((Math.max((this.x+dx),room.layout[i].x) < Math.min((this.x+this.width+dx),(room.layout[i].x+room.layout[i].x_len))) && (Math.max((this.y+dy),room.layout[i].y) < Math.min((this.y+this.height+dy),(room.layout[i].y+room.layout[i].y_len)))) {
                 //if room.layout[i].interaction 
                 return room.layout[i];
