@@ -7,6 +7,7 @@ function Enemy() {
     this.color = 'red';
     this.alive = true;
     this.damageable = true;
+    this.walkable = false;
 }
 Enemy.prototype.constuctor = Enemy;
 
