@@ -21,7 +21,7 @@ Enemy.prototype.beenHit = function (dmg) {
     }
 };
 
-Player.prototype.draw = function() {
+Enemy.prototype.draw = function() {
     c.fillStyle = "red";
     c.fillRect(this.x,this.y,5,5);
 };
