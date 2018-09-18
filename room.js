@@ -106,7 +106,6 @@ var room_data = {
 
 
 function Floor(data) {
-    console.log(data.x);
     this.x = room.getX()+data.x;
     this.y = room.getY()+data.y;
     this.x_len = data.x_len;
