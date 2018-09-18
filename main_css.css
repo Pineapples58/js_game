@@ -21,4 +21,7 @@ body {
   top:10px;
 }
 
-
+.crate_table {
+  z-index:10;
+  position:absolute;
+}
