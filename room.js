@@ -107,6 +107,7 @@ var room_data = {
 
 
 function Floor(data) {
+    console.log(data);
     this.x = room.getX()+data.x;
     this.y = room.getY()+data.y;
     this.x_len = data.x_len;
@@ -140,6 +141,7 @@ Door.prototype.interact = function () {
 };
 
 function Crate (data) {
+    console.log(data);
     Floor.call(this,data);
     this.inventory = data.inventory;
     this.is_open = false;
