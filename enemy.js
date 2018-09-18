@@ -6,7 +6,6 @@ function Enemy() {
     this.speed = 2;
     this.health = 2;
     this.damage = 1;
-    this.alive = true;
     this.damageable = true;
     this.fill_color = 'red';
     this.stroke_color = 'red';
