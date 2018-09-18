@@ -4,9 +4,10 @@ function Enemy() {
     this.speed = 2;
     this.health = 5;
     this.damage = 1;
-    this.color = 'red';
     this.alive = true;
     this.damageable = true;
+    this.fill_color = 'red';
+    this.stroke_color = 'red';
     this.walkable = false;
     this.has_interaction = false;
 }
