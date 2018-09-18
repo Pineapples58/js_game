@@ -130,7 +130,7 @@ Crate.prototype.interact = function () {
 //set location of that div in here too
 
 Crate.prototype.open = function () {
-    let div = document.getElementsbyClassName('crate_table')[0];
+    let div = document.getElementsByClassName('crate_table')[0];
     let table = document.createElement('table');
     let tbody = document.createElement('tbody');
     
