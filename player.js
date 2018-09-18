@@ -80,6 +80,7 @@ Player.prototype.addInventory = function (item) {
     
 Player.prototype.updateInventory = function () {
     let table = document.getElementsByClassName('player_info')[0].getElementsByTagName('table');
+    console.log(table);
     while (table.firstChild) {
         table.removeChild(table.firstChild);
     }
