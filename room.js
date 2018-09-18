@@ -65,8 +65,8 @@ var room_data = {
                          {x:0,y:495,x_len:500,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          
                          {x:0,y:50,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
-                         {x:20,y:40,x_len:5,y_len:260,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
-                         {x:20,y:300,x_len:50,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:100,y:40,x_len:5,y_len:260,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:100,y:300,x_len:50,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          
                          {x:250,y:350,x_len:5,y_len:130,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:400,y:20,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
