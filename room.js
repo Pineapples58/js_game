@@ -61,7 +61,7 @@ var room_data = {
                          {x:495,y:0,x_len:5,y_len:500,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:0,y:495,x_len:500,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false}],
                    door:[{x:480,y:480,x_len:10,y_len:10,fill_color:'pink',stroke_color:'pink',walkable:true, has_interaction:true, next_room:'First_Area'}],
-                   crate:[{x:100,y:50,x_len:5,y_len:5,fill_color:'brown',stroke_color:'brown',walkable:false, has_interaction:true, inventory:['torch']}]
+                   crate:[{x:50,y:50,x_len:5,y_len:5,fill_color:'brown',stroke_color:'brown',walkable:false, has_interaction:true, inventory:['torch']}]
                   },
     layout_ordering : ['floor','wall', 'door','crate']
   },
@@ -139,9 +139,7 @@ Crate.prototype.open = function () {
         tr = document.createElement('tr');
         td = document.createElement('tr');
         td.innerHTML = this.inventory[i];
-        console.log(i+' '+this.inventory[i]);
-        td.onclick = (function (obj) {return function(){console.log(i);player.addInventory(obj.inventory[i]);table.deleteRow(i);}})(this);
-        //td.onclick = function () {player.addInventory(this.innerHTML);table.deleteRow(i);};
+        td.onclick = (function (obj) {return function(){player.addInventory(obj.inventory[i-1]);table.deleteRow(i-1);}})(this);
         tr.appendChild(td);
         tbody.appendChild(td);
     }
