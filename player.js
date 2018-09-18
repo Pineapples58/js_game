@@ -20,6 +20,11 @@ Player.prototype.undraw = function() {
 };
 
 Player.prototype.move = function(dir) {
+    for (var i=0; i<room.inventory.length; i++) {
+        if (room.inventory[i].constructor == Crate && room.inventory[i].is_open) {
+            room.inventory[i].close();
+        }
+    }    
     let dx = 0;
     let dy = 0;
     switch (dir) {
