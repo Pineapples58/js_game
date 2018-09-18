@@ -45,6 +45,7 @@ Player.prototype.move = function(dir) {
     }
     
     let obj_contacted = this.detectContact(dx, dy);
+    console.log(obj_contacted);
     if (!obj_contacted || obj_contacted.walkable) {
         this.undraw();
         this.y += (dy);
@@ -64,7 +65,7 @@ Player.prototype.detectContact = function (dx, dy) {
         }
         else {        
             if ((Math.max((this.x+dx),room.layout[i].x) < Math.min((this.x+this.width+dx),(room.layout[i].x+room.layout[i].x_len))) && (Math.max((this.y+dy),room.layout[i].y) < Math.min((this.y+this.height+dy),(room.layout[i].y+room.layout[i].y_len)))) {
-                if (room.layout[i].constructor == Enemy){console.log(room.layout[i]);}
+                //if (room.layout[i].constructor == Enemy){console.log(room.layout[i]);}
                 return room.layout[i];
             }
         }
