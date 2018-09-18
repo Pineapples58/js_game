@@ -84,15 +84,15 @@ Player.prototype.updateInventory = function () {
         table.removeChild(table.firstChild);
     }
     
-    let tbody = document.createElement('tbody');
+    //let tbody = document.createElement('tbody');
     for (var i=0; i<this.inventory.length; i++) {
         let tr = document.createElement('tr');
         let td = document.createElement('td');
         td.innerHTML = this.inventory[i];
         tr.appendChild(td);
-        tbody.appendChild(tr);
+        table.appendChild(tr);
     }
-    table.appendChild(tbody);
+    //table.appendChild(tbody);
 };
 
 
