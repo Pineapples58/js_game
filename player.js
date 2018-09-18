@@ -110,4 +110,10 @@ Player.prototype.updateInventory = function () {
     table.appendChild(tbody);
 };
 
+Player.prototype.attack = function () {
+    let contacted = player.detectContact(5,0);
+    if (contacted.isDamageable) {
+        contacted.beenHit(this.damage);
+    }  
+};
 
