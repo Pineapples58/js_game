@@ -28,7 +28,7 @@ Room.prototype.populateLayout = function(){
                     this.layout.push(new Crate(obj_data));
                     break;
                 case 'enemy':
-                    this.layout.push(new Crate());
+                    this.layout.push(new Enemy());
                     break;
             }
         });       
