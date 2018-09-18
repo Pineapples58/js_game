@@ -63,6 +63,20 @@ var room_data = {
                          {x:20,y:0,x_len:5,y_len:30,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:20,y:40,x_len:5,y_len:260,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:20,y:300,x_len:50,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         //
+                         {x:250,y:350,x_len:5,y_len:130,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:400,y:20,x_len:100,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:260,y:170,x_len:5,y_len:80,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:440,y:250,x_len:5,y_len:30,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:310,y:80,x_len:50,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:210,y:480,x_len:50,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:40,y:400,x_len:5,y_len:70,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:0,y:330,x_len:150,y_len:50,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         /*
+                         {x:20,y:0,x_len:5,y_len:30,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:20,y:0,x_len:5,y_len:30,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:20,y:0,x_len:5,y_len:30,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
+                         {x:20,y:0,x_len:5,y_len:30,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},*/
                         ],
                    door:[{x:480,y:480,x_len:10,y_len:10,fill_color:'pink',stroke_color:'pink',walkable:true, has_interaction:true, next_room:'First_Area'}],
                    crate:[{x:50,y:50,x_len:5,y_len:5,fill_color:'brown',stroke_color:'brown',walkable:false, has_interaction:true, inventory:['torch','sword']}]
