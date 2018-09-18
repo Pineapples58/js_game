@@ -152,5 +152,15 @@ Crate.prototype.open = function () {
     div.style.left = this.x+'px';
     div.style.top = this.y+'px';
     
+};
+
+Crate.prototype.close = function () {
+    let div = document.getElementsByClassName('crate_table')[0];
+    while (div.firstChild) {
+        div.removeChild(div.firstChild);
+    }
+    div.style.left = ''; 
+    div.stlye.top = '';
 }
+
 
