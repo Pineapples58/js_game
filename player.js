@@ -20,9 +20,9 @@ Player.prototype.undraw = function() {
 };
 
 Player.prototype.move = function(dir) {
-    for (var i=0; i<room.inventory.length; i++) {
-        if (room.inventory[i].constructor == Crate && room.inventory[i].is_open) {
-            room.inventory[i].close();
+    for (var i=0; i<room.layout.length; i++) {
+        if (room.layout[i].constructor == Crate && room.layout[i].is_open) {
+            room.layout[i].close();
         }
     }    
     let dx = 0;
