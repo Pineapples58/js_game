@@ -130,7 +130,7 @@ Crate.prototype.interact = function () {
 //set location of that div in here too
 
 Crate.prototype.open = function () {
-    let div = document.createElement('div');
+    let div = document.getElementbyClassName('crate_table');
     let table = document.createElement('table');
     let tbody = document.createElement('tbody');
     
@@ -145,11 +145,9 @@ Crate.prototype.open = function () {
     }
     table.appendChild(tbody);
     div.appendChild(table);
-    div.style.zIndex = 5;
-    div.style.position = 'absolute';
+    //div.style.position = 'absolute';
     div.style.left = this.x;
     div.style.top = this.y;
     
-    document.getElementById('gameArea').appendChild(div);
 }
 
