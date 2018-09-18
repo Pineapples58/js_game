@@ -7,6 +7,8 @@ function Player (position) {
     this.color = 'green';
     this.equiped = [];
     this.inventory = [];
+    this.health = 10;
+    this.damage = 1;
 }
 
 Player.prototype.draw = function() {
