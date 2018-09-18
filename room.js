@@ -125,9 +125,6 @@ Crate.prototype.constructor = Crate;
 Crate.prototype.interact = function () {
     this.open();
 }
-// CHANGE this put a div with id crateArea or something
-//append table to it make sure only one table at a time
-//set location of that div in here too
 
 Crate.prototype.open = function () {
     let div = document.getElementsByClassName('crate_table')[0];
@@ -137,13 +134,11 @@ Crate.prototype.open = function () {
     let tr,td;
     for (var i=0; i<this.inventory.length; i++) {
         tr = document.createElement('tr');
-        td = document.createElement('tr');
+        td = document.createElement('td');
         td.innerHTML = this.inventory[i];
         td.id = "crateInventory_"+i;
         td.onclick = (function (obj) {return function() {
-            //let row_num = this.id.split('_')[1];
             let row_num = this.rowIndex;
-            console.log(this);
             player.addInventory(obj.inventory[row_num]);
             obj.inventory.splice(row_num,1);
             table.deleteRow(row_num);
@@ -154,7 +149,6 @@ Crate.prototype.open = function () {
     }
     table.appendChild(tbody);
     div.appendChild(table);
-    //div.style.position = 'absolute';
     div.style.left = this.x+'px';
     div.style.top = this.y+'px';
     
