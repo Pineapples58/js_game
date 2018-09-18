@@ -4,7 +4,7 @@ function Enemy() {
     this.x_len = 5;
     this.y_len = 5;
     this.speed = 2;
-    this.health = 5;
+    this.health = 2;
     this.damage = 1;
     this.alive = true;
     this.damageable = true;
@@ -18,6 +18,7 @@ Enemy.prototype.constuctor = Enemy;
 Enemy.prototype.beenHit = function (dmg) {
     if (dmg >= this.health) {
        this.alive = false;
+       room.layout.splice(room.layout.indexOf(this),1);
        console.log('dead');
     }
     else {
