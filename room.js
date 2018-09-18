@@ -118,6 +118,7 @@ Door.prototype.interact = function () {
 function Crate (data) {
     Floor.call(this,data);
     this.inventory = data.inventory;
+    this.is_open = false;
 }
 
 Crate.prototype = Object.create(Floor.prototype);
@@ -151,7 +152,7 @@ Crate.prototype.open = function () {
     div.appendChild(table);
     div.style.left = this.x+'px';
     div.style.top = this.y+'px';
-    
+    this.is_open = true;
 };
 
 Crate.prototype.close = function () {
