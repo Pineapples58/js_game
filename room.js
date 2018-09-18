@@ -55,7 +55,7 @@ var room_data = {
   Start_Area : {
     name : 'Start_Area',
     player_start: {x:30,y:30},
-    layout_data : {floor:[{x:0,y:0,x_len:500,y_len:500,fill_color:'green',stroke_color:'#9e9e9e',walkable:true, has_interaction:false}],
+    layout_data : {floor:[{x:0,y:0,x_len:500,y_len:500,fill_color:'#9e9e9e',stroke_color:'#9e9e9e',walkable:true, has_interaction:false}],
                    wall:[{x:0,y:0,x_len:500,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:0,y:0,x_len:5,y_len:500,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:495,y:0,x_len:5,y_len:500,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
@@ -68,7 +68,7 @@ var room_data = {
   First_Area : {
     name : 'First_Area',
     player_start: {x:100,y:300},
-    layout_data : {floor:[{x:0,y:0,x_len:500,y_len:500,fill_color:'green',stroke_color:'#9e9e9e',walkable:true, has_interaction:false}],
+    layout_data : {floor:[{x:0,y:0,x_len:500,y_len:500,fill_color:'#9e9e9e',stroke_color:'#9e9e9e',walkable:true, has_interaction:false}],
                    wall:[{x:0,y:0,x_len:500,y_len:5,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:0,y:0,x_len:5,y_len:500,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
                          {x:495,y:0,x_len:5,y_len:500,fill_color:'black',stroke_color:'black',walkable:false, has_interaction:false},
